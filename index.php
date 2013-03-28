@@ -8,4 +8,8 @@
 
 require_once("include/auth.php");
 
+include("templates/html_header");
+
+include("include/navigation.php");
+
 ?>
