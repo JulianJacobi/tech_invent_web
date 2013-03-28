@@ -12,6 +12,9 @@ include("include/functions/include.php");
 //Login Scripts
 require_once("include/auth.php");
 
+//Static text for Testing
+include("include/test.php");
+
 //HTML Header
 include("templates/html_head.php");
 
