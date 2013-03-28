@@ -6,22 +6,27 @@
  * @version 2013-03-28
  */
 
-require_once("config/config_db.php");
-$raw_login_user = $_POST["login_user"];
-$raw_login_passwd = $_POST["login_passwd"];
-if(isset($raw_login_user) and isset($raw_login_passwd)) {
-	if ($raw_login_user == "" and $raw_login_passwd == "") {
-		generate_login(false);
+$raw_login_user = "";
+$raw_login_passwd = "";
+if (isset($_POST["login_user"]) and isset($_POST["login_passwd"])) {
+	$raw_login_user = $_POST["login_user"];
+	$raw_login_passwd = $_POST["login_passwd"];
+}
+if($_SESSION["login"] != "true") {
+generate_login(false);
+}
+else if($raw_login_user == "" or $raw_login_passwd == "" ) {
+generate_login(true);
+}
+else if($_SESSION["login"] == "true") {
+	//continue
 	}
-}
 else {
-	generate_login(false);
+generate_login(true);
 }
-
-
 function generate_login($error)
 {
-
+include("templates/login_form.php");
 exit;
 }
 
