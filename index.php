@@ -9,10 +9,12 @@ session_start();
 
 //Basic Functions
 include("include/functions/include.php");
+include("include/strings.php");
+include("include/plugins/include.php");
 
 //HTML Header
 include("templates/html_head.php");
-include("include/strings.php");
+
 
 //Login Scripts
 require_once("include/auth.php");
