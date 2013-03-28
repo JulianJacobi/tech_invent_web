@@ -13,7 +13,7 @@ include("config/config_db.php");
 //Ist die Session erstellt? Melden wir uns ab?
 
 
-if (!isset($_SESSION["login"]) or isset($_GET["plugin"]) and isset($_GET["mode"])) {
+if (!isset($_SESSION["login"]) || isset($_GET["plugin"]) && $_GET["plugin"] == "main" && isset($_GET["mode"]) && $_GET["mode"] == "logout") {
 	$_SESSION["login"] = false;
 	$_SESSION["userid"] = 0;
 	$_SESSION["username"] = "";
