@@ -3,7 +3,7 @@
  * Authentication for TechInvent
  *
  * @author Malte Kießling
- * @version 2013-03-28
+ * @version 2013-03-29
  */
  
  //Einfügen der Datenbank-headers
