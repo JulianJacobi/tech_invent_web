@@ -1,0 +1,31 @@
+/*
+ * Menu CSS File for TechInvent
+ *
+ * @author Julian Jacobi
+ * @version 2013-03-28
+ */
+
+div#menu {
+	margin: 0px;
+	width: 100%;
+	height: 1.5em;
+	background-color: #343434;
+	
+}
+
+div.menu_item{
+	display: block;
+	float: left;
+	padding: 0px 20px;
+}
+
+div.menu_item a{
+	display: block;
+	font-family: arial;
+	color: lightgrey;
+	text-decoration: none;
+}
+
+div.menu_item a:hover{
+	color: white;
+}
