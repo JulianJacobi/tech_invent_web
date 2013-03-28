@@ -6,11 +6,14 @@
  * @version 2013-03-28
  */
 
+global $strings;
+
 //Login Form
-$string_login_headline					= "Login";
-$string_login_username					= "Benutzername:";
-$string_login_password					= "Passwort:";
-$string_login_login						= "Anmelden";
-$string_login_error						= "Login fehlgeschlagen";
+$strings['login']['headline']				= "Login";
+$strings['login']['username']				= "Benutzername:";
+$strings['login']['passord']				= "Passwort:";
+$strings['login']['login']					= "Anmelden";
+$strings['login']['error']					= "Login fehlgeschlagen";
+
 
 ?>
