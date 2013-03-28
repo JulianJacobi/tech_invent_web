@@ -12,6 +12,7 @@ include("include/functions/include.php");
 
 //HTML Header
 include("templates/html_head.php");
+include("include/strings.php");
 
 //Login Scripts
 require_once("include/auth.php");
