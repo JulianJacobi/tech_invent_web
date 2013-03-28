@@ -1,0 +1,51 @@
+/*
+ * login css file for TechInvent
+ *
+ * @author Julian Jacobi
+ * @version 2013-03-23
+ */
+ 
+div#login {
+	width: 16em;
+	position: absolute;
+	left: 50%;
+	margin-left: -8em;
+	margin-top: 30px;
+	border-radius: 10px;
+	background: #343434;
+	
+}
+p#login_headline {
+	font-family: arial;
+	font-size: 25px;
+	font-weight: bold;
+	color: lightgrey;
+	text-align: center;
+	margin: 10px 0px;
+}
+p.login_label {
+	font-family: arial;
+	color: lightgrey;
+	text-align: left;
+	margin: 10px 0px 10px 10px;
+}
+form#login_form {
+	text-align: center;
+}
+input.login_input {
+	font-family: arial;
+	background: transparent;
+	border: 1px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	border-radius: 5px;
+	width: 16em;
+}
+input#login_submit {
+	margin-top: 20px;
+	cursor: pointer;
+}
+p.login_error {
+	color: red;
+	font-family: arial;
+}
