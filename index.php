@@ -9,6 +9,9 @@
 //Login Scripts
 require_once("include/auth.php");
 
+//Basic Classes
+include("include/classes/db_access.php");
+
 //HTML Header
 include("templates/html_head.php");
 
