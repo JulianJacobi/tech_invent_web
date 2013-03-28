@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*
  * Index File for TechInvent
  *
