@@ -51,20 +51,23 @@ else {
 	$abfrage = "SELECT * FROM login WHERE username == '$escaped_login_user' LIMIT 1";
 	$ergebnis = mysql_query($abfrage);
 	$row = mysql_fetch_object($ergebnis);
-    
-	if(md5($row->username.$row->password) == md5($escaped_login_user.$hashed_login_passwd)) {
-		//Eintragen der Darten in die Session
-		$_SESSION["login"] = true;
-		$_SESSION["userid"] = $row->id;
-		$_SESSION["username"] = $row->username;
-		}
-	else
-	{
-		//... oder auch nicht
+    if(isset($row->username) and isset($row->password) and isset($row->id)) { 
+		if(md5($row->username.$row->password) == md5($escaped_login_user.$hashed_login_passwd)) {
+			//Eintragen der Darten in die Session
+			$_SESSION["login"] = true;
+			$_SESSION["userid"] = $row->id;
+			$_SESSION["username"] = $row->username;
+			}
+		else
+		{
+			//... oder auch nicht
+			generate_login(true);
+			}
+	}
+	else {
 		generate_login(true);
-		}
+	}
 }
-
 //Das is die Funktion, die im falle das Irgentwas mit Login passiert aufgerufen wird.
 function generate_login($error)
 {
