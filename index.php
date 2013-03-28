@@ -11,6 +11,7 @@ session_start();
 include("include/functions/include.php");
 include("include/strings.php");
 include("include/plugins/include.php");
+include("include/connect.php");
 
 //HTML Header
 include("templates/html_head.php");
