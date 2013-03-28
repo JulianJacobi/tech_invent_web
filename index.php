@@ -24,9 +24,7 @@ include("include/test.php");
 
 //Navigationbar
 include("include/navigation.php");
-
-
-
+render_plugin();
 
 //HTML Footer
 include("templates/html_footer.php");
