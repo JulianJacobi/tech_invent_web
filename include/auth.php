@@ -48,12 +48,13 @@ else {
 	//und hab dann hier ne challange für den login!
 	$hashed_login_passwd = md5($raw_login_passwd);
 	$login_connection = mysql_connect($config_db_server, $config_db_user, $config_db_password);
+	mysql_select_db($config_db_database);
 	$abfrage = "SELECT * FROM login WHERE username == '$escaped_login_user' LIMIT 1";
 	$ergebnis = mysql_query($abfrage);
 	$row = mysql_fetch_object($ergebnis);
     if(isset($row->username) and isset($row->password) and isset($row->id)) { 
 		if(md5($row->username.$row->password) == md5($escaped_login_user.$hashed_login_passwd)) {
-			//Eintragen der Darten in die Session
+			//Eintragen der Darten in die Session...
 			$_SESSION["login"] = true;
 			$_SESSION["userid"] = $row->id;
 			$_SESSION["username"] = $row->username;
@@ -61,6 +62,7 @@ else {
 		else
 		{
 			//... oder auch nicht
+			$_SESSION["login"] = false;
 			generate_login(true);
 			}
 	}
