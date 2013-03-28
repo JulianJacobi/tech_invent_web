@@ -6,8 +6,8 @@
  * @version 2013-03-28
  */
 
-//Basic Classes
-include("include/methods/db_access.php");
+//Basic Functions
+include("include/functions/include.php");
 
 //Login Scripts
 require_once("include/auth.php");
