@@ -7,8 +7,9 @@
  */
 
 
-$config_db_server		= "jayjay.pf-control.de";
+$config_db_server		= "kenakapheus.dyndns.org";
 $config_db_user			= "tech_invent";
 $config_db_password		= "t3c6inv3n7";
+$config_db_name	        = "tech_invent";
 
 ?>
