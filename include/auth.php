@@ -14,15 +14,16 @@ if (!isset($_SESSION["login"])) {
 if (isset($_POST["login_user"]) and isset($_POST["login_passwd"])) {
 	$raw_login_user = $_POST["login_user"];
 	$raw_login_passwd = $_POST["login_passwd"];
+	if($_POST["login_user"] == "test" and $_POST["login_passwd"] = "test") {
+		$_SESSION["login"] = true;
+		}
 }
 
-if($_SESSION["login"] == false) {
-generate_login(false);
-}
-else if($raw_login_user == "" or $raw_login_passwd == "" ) {
-generate_login(true);
-}       
-else if($_SESSION["login"] == true) {
+
+
+
+
+if($_SESSION["login"] == true) {
 	//continue
 	}
 else {
