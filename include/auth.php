@@ -38,9 +38,9 @@ else {
 	$login_connection = mysql_connect($config_db_server, $config_db_user, $config_db_password);
 	$abfrage = "SELECT * FROM login WHERE username == '$escaped_login_user' LIMIT 1";
 	$ergebnis = mysql_query($abfrage);
-	$row = mysql_fetch_object($ergebnis)
+	$row = mysql_fetch_object($ergebnis);
     
-	if(md5($row->username.$row->password) == md5($escaped_login_user.$hashed_login_passwd) {
+	if(md5($row->username.$row->password) == md5($escaped_login_user.$hashed_login_passwd)) {
 		$_SESSION["login"] = true;
 		$_SESSION["userid"] = $row->id;
 		$_SESSION["username"] = $row->username;
