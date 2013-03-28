@@ -6,11 +6,11 @@
  * @version 2013-03-28
  */
 
+//Basic Classes
+include("include/methods/db_access.php");
+
 //Login Scripts
 require_once("include/auth.php");
-
-//Basic Classes
-include("include/classes/db_access.php");
 
 //HTML Header
 include("templates/html_head.php");
@@ -23,6 +23,5 @@ include("include/navigation.php");
 
 //HTML Footer
 include("templates/html_footer.php");
-
 
 ?>
