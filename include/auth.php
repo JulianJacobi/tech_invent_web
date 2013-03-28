@@ -9,17 +9,21 @@
  //Einfügen der Datenbank-headers
 include("config/config_db.php");
 
+
+//Ist die Session erstellt? Melden wir uns ab?
+
+
+if (!isset($_SESSION["login"]) or isset($_GET["plugin"]) and isset($_GET["mode"])) {
+	$_SESSION["login"] = false;
+	$_SESSION["userid"] = 0;
+	$_SESSION["username"] = "";
+	generate_login(false);	
+}
+
 //Erstellen und leeren der Roh-Variablen
  
 $raw_login_user = "";
 $raw_login_passwd = "";
-
-//Ist die Session erstellt?
-if (!isset($_SESSION["login"])) {
-	$_SESSION["login"] = false;
-	generate_login(false);
-	
-}
 
 //Wird was wer POST übergeben?
 if (isset($_POST["login_user"]) and isset($_POST["login_passwd"])) {
@@ -34,7 +38,7 @@ if($_SESSION["login"] == true) {
 	
 //Denn wenn nicht...
 else {
-	//...schaue ich, ob man überhabt was übergeben hat,
+	//...schaue ich, ob man überhabt was übergeben hat...
 	if($raw_login_passwd == "" and $raw_login_user == "") {
 		generate_login(false);
 	}
@@ -47,8 +51,11 @@ else {
 		
 	//und hab dann hier ne challange für den login!
 	$hashed_login_passwd = md5($raw_login_passwd);
-	$login_connection = mysql_connect($config_db_server, $config_db_user, $config_db_password);
-	mysql_select_db($config_db_database);
+	
+	/* Das hier is nichtmehr nötig dank Jakobis Globalisierung...
+	*$login_connection = mysql_connect($config_db_server, $config_db_user, $config_db_password);
+	*mysql_select_db($config_db_database);
+	*/
 	$abfrage = "SELECT * FROM login WHERE username = '$escaped_login_user' LIMIT 1";
 	$ergebnis = mysql_query($abfrage); 
 	$row = mysql_fetch_object($ergebnis);
