@@ -7,6 +7,5 @@
  */
 
 require_once("include/auth.php");
-//asdnapkgjapkjfgakjergpkajdfgb
 
 ?>
