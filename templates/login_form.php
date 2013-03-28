@@ -1,3 +1,4 @@
+<?php global $strings; ?>
 <div id="login">
 	<form action="./" method="post" id="login_form">
 		<p id="login_headline"><?php print($strings['login']['headline']); ?></p>
