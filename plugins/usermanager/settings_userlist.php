@@ -15,17 +15,16 @@ if(!isset($_POST['step'])){
 	global $strings;
 	include("plugins/usermanager/templates/userlist.php");
 } elseif (isset($_POST['step']) && $_POST['step'] == "user_mono") {
-	$userid = $_POST['uid'];
+	//$userid = $_POST['uid'];
 	$username = $_POST['uname'];
 	if (isset($_POST['edit']) && $_POST['edit'] == "groups") {
 		$groups = get_groups_for_user($username);
 		foreach ($groups AS $name => $val) {
-			if (isset($_POST[$name]))
-				if ($_POST[$name] == "on") {
-					$groups[$name] = true;
-				} else {
-					$groups[$name] = false;
-				}
+			if (isset($_POST[$name]) && $_POST[$name] == "on") {
+				$groups[$name] = true;
+			} else {
+				$groups[$name] = false;
+			}
 		}
 		 set_groups_for_user($username, $groups);
 	}
