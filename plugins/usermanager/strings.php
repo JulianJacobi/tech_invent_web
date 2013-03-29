@@ -52,6 +52,10 @@ $strings['usermanager']['deluser_abbr']						= "Abbrechen";
 $strings['usermanager']['monouser_rights']					= "Rechtegruppen:";
 $strings['usermanager']['monouser_rightsok']				= "Speichern";
 
+//grouplist
+$strings['usermanager']['grouplist_headline']				= "Rechtegruppen";
+$strings['usermanager']['grouplist_headline']				= "ID";
+
 
 
 ?>
