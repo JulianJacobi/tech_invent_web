@@ -25,7 +25,7 @@ if(!isset($_POST['step'])){
 		include("plugins/usermanager/templates/new_user.php");
 		exit;
 	}
-	if(isset($_POST['newuser_username']) && !ctype_space($_POST['newuser_username'])) {
+	if(isset($_POST['newuser_username']) && !ctype_space($_POST['newuser_username']) && $_POST['newuser_username'] != "") {
 		
 	} else {
 		global $string;

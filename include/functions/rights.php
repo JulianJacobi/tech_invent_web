@@ -69,7 +69,7 @@ function get_groups_for_user($username) {
 }
 
 function set_groups_for_user($username, $new) {
-	$old = get_groups_for_user($username)
+	$old = get_groups_for_user($username);
 	foreach ($old AS $name => $bool) {
 		if ($bool == $new[$name])
 			continue;
