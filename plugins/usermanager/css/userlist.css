@@ -1,0 +1,38 @@
+div#usermanager_userlist {
+	background-color: #343434;
+	width: 35em;
+	margin: 0px auto 0px auto;
+	border-radius: 0px 0px 10px 10px;
+	padding: 10px;
+}
+p#usermanager_userlist_headline {
+	color: lightgrey;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+table#usermanager_userlist {
+	text-align: center;
+	color: lightgrey;
+}
+
+table#usermanager_userlist td{
+	
+}
+
+tr.usermanager_userlist_head {
+	background: rgba(255,255,255,0.2);
+	border: none;
+}
+
+p.usermanager_userlist_head {
+	padding: 0px 10px;
+}
+
+p.usermanager_userlist_entry {
+	padding: 0px 10px;
+}
+
+tr.usermanager_userlist_entry_hl {
+	background-color: rgba(255,255,255,0.1);
+}

@@ -21,8 +21,11 @@ $strings['usermanager']['user_settings_error2']				= "Passwort falsch!";
 $strings['usermanager']['user_settings_error3']				= "erfolgreich!";
 $strings['usermanager']['user_settings_error4']				= "Beutzername existiert schon!";
 
+//userlist
+
+$strings['usermanager']['userlist_headline']				= "Nutzerliste";
 $strings['usermanager']['userlist_head_id']					= "ID";
 $strings['usermanager']['userlist_head_name']				= "Benutzername";
-$strings['usermanager']['userlist_head_pass']				= "Passwort (MD5)";
+$strings['usermanager']['userlist_head_pass']				= "Passwort (MD5-hash)";
 
 ?>
