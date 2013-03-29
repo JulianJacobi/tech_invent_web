@@ -19,7 +19,7 @@ input.system_input_text {
 	border-radius: 5px;
 }
 
-input.system_button {
+.system_button {
 	font-family: arial;
 	background: transparent;
 	border: 1px solid lightgrey;
@@ -27,4 +27,5 @@ input.system_button {
 	padding: 5px;
 	border-radius: 5px;
 	cursor: pointer;
+	text-decoration: none;
 }
