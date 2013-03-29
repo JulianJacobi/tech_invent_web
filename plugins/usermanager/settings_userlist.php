@@ -28,9 +28,7 @@ if(!isset($_POST['step'])){
 	}
 	if(isset($_POST['newuser_username']) && !ctype_space($_POST['newuser_username']) && $_POST['newuser_username'] != "") {
 		$new_username = $_POST['newuser_username'];
-		$abfrage_username = mysql_query("SELECT * FROM login WHERE username = '$new_username'");
-		$numrows_username = mysql_num_rows($abfrage_username);
-		if($numrows_username < 1) {
+		if(!user_exists($new_username)) {
 			if(isset($_POST['newuser_passwd']) && !ctype_space($_POST['newuser_passwd']) && $_POST['newuser_passwd'] != "") {
 				$new_passwd = md5($_POST['newuser_passwd']);
 				$new_passwd2 = md5($_POST['newuser_passwd2']);
@@ -58,5 +56,9 @@ if(!isset($_POST['step'])){
 		include("plugins/usermanager/templates/new_user.php");
 	}
 
+} elseif (isset($_POST['step']) && $_POST['step'] == "del_user") {
+	global $strings;
+	include("plugins/usermanager/templates/del_user.php");
+	
 }
 ?>

@@ -28,6 +28,7 @@ $strings['usermanager']['userlist_head_id']					= "ID";
 $strings['usermanager']['userlist_head_name']				= "Benutzername";
 $strings['usermanager']['userlist_head_pass']				= "Passwort (MD5-hash)";
 $strings['usermanager']['userlist_edit']					= "Edit";
+$strings['usermanager']['userlist_delete']					= "Del";
 $strings['usermanager']['userlist_add']						= "Add";
 
 //newuser

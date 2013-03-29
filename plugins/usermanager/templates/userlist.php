@@ -24,11 +24,17 @@
 		</td><td>
 			<p class="usermanager_userlist_entry"><?php print($i['pass']) ?></p>
 		</td><td>
-			<form action="./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung" method="post">
+			<form action="./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung" method="post" id="usermanager_userlist_editform">
 				<input type="hidden" name="step" value="user_mono">
 				<input type="hidden" name="uid" value="<?php print($i['id']) ?>">
 				<input type="hidden" name="uname" value="<?php print($i['name']) ?>">
 				<input type="submit" value="<?php print($strings['usermanager']['userlist_edit']) ?>" class="system_button usermanager_userlist_editbutton">
+			</form>
+		</td><td>
+			<form action="./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung" method="post">
+				<input type="hidden" name="step" value="del_user">
+				<input type="hidden" name="uname" value="<?php print($i['name']) ?>">
+				<input type="submit" value="<?php print($strings['usermanager']['userlist_delete']) ?>" class="system_button usermanager_userlist_editbutton">
 			</form>
 		</td></tr>
 	<?php $j++; ?>
