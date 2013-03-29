@@ -1,4 +1,6 @@
 <?php
+include("plugins/usermanager/strings.php");
+
 //Nutzerliste
 if (isset($_GET['mode']) && $_GET['mode'] == "show_users") {
 	$e = mysql_query("SELECT * FROM login");
@@ -26,7 +28,7 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 		else if ($settings_new_passwd != $settings_new_passwd2) {
 			generate_setting_template(1);
 		}
-		else if (md5(md5($settings_old_passwd).$_SESSION["username"]) == md5($settings_return->username.$settings_return->password)) {
+		else if (md5($_SESSION["username"].md5($settings_old_passwd)) == md5($settings_return->username.$settings_return->password)) {
 			if($settings_new_passwd != "") {
 				$settings_new_passwd = md5($settings_new_passwd);
 				$settings_escaped_userid = mysql_real_escape_string($_SESSION["userid"]);
