@@ -7,8 +7,11 @@
 		<p class="login_label"><?php print($strings['login']['password']); ?></p>
 		<input type="password" name="login_passwd" class="login_input"><br>
 		<?php
-		if ($error) {
+		if ($error == true) {
 			print('<p class="login_error">'.$strings['login']['error'].'</p>');
+		}
+		if ($error == "true") {
+			print('<p class="login_error">'.$strings['login']['error_ban'].'</p>');
 		}
 		?>
 		<input type="submit" value="<?php print($strings['login']['login']); ?>" id="login_submit" class="login_input">

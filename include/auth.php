@@ -22,12 +22,8 @@ if (!isset($_SESSION["login"]) || isset($_GET["plugin"]) && $_GET["plugin"] == "
 	generate_login(false);	
 }
 
-$escaped_user_id = mysql_real_escape_string($_SESSION['userid']);
-$banned_query = mysql_query("Select * FROM usergroups WHERE userid LIKE '$escaped_user_id'");
-while($row=mysql_fetch_object($banned_query)) {
-	if ($row->group == "banned") {
-		generate_login(true);
-	}
+if (!has_permission("user_login")) {
+	generate_login("true");
 }
 //Erstellen und leeren der Roh-Variablen
  

@@ -13,6 +13,7 @@ $strings['login']['username']				= "Benutzername:";
 $strings['login']['password']				= "Passwort:";
 $strings['login']['login']					= "Anmelden";
 $strings['login']['error']					= "Login fehlgeschlagen";
+$strings['login']['error_ban']				= "Du wurdest verbannt!";
 
 
 ?>
