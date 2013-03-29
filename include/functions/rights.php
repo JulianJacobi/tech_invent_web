@@ -41,7 +41,7 @@ function remove_permission_from_group($permissionname, $groupname) {
 }
 
 function add_user($username, $password) {
-	if (mysql_num_rows(mysql_query("SELECT * FROM login WHERE username = '" . $username . "';")) == 0)
+	if (!user_exists($username))
 		mysql_query("INSERT INTO login (`id`, `username`, `password`) VALUES (NULL, '" . $username . "', '" . $password . "');");
 }
 
@@ -50,7 +50,7 @@ function remove_user($username) {
 }
 
 function add_group($groupname, $description) {
-	if (mysql_num_rows(mysql_query("SELECT * FROM groups WHERE name = '" . $groupname . "';")) == 0)
+	if (!group_exists($groupname))
 		mysql_query("INSERT INTO groups (`id`, `name`, `description`) VALUES (NULL, '" . $groupname . "', '" . $description . "');");
 }
 
@@ -59,7 +59,7 @@ function remove_group($groupname) {
 }
 
 function add_permission($permname, $description) {
-	if (mysql_num_rows(mysql_query("SELECT * FROM perms WHERE name = '" . $permname . "';")) == 0)
+	if (!permission_exists($permname))
 		mysql_query("INSERT INTO perms (`id`, `name`, `description`) VALUES (NULL, '" . $permname . "', '" . $description . "');");
 }
 
