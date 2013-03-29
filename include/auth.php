@@ -10,6 +10,8 @@
 include("config/config_db.php");
 
 
+add_menu_item('main', 'Abmelden', "logout");
+
 //Ist die Session erstellt? Melden wir uns ab?
 
 
