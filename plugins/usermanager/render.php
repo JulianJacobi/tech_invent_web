@@ -1,4 +1,11 @@
 <?php
+/*
+ * Usermanagement for TechInvent
+ *
+ * @author Malte Kießling & Lukas Klingberg
+ * @version 2013-03-29
+ */
+
 include("plugins/usermanager/strings.php");
 
 //Nutzerliste
