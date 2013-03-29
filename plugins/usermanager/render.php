@@ -26,12 +26,12 @@ if (isset($_GET['mode']) && $_GET['mode'] == "show_users") {
 
 else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 	if(isset($_POST["settings_old_passwd"]) and isset($_POST["settings_new_passwd"]) and isset($_POST["settings_new_passwd2"]) and isset($_POST["settings_new_username"]) ) {
-		$settings_old_passwd = $_POST["settings_old_passwd"];
-		$settings_new_passwd = $_POST["settings_new_passwd"];
-		$settings_new_passwd2 = $_POST["settings_new_passwd2"];
-		$settings_new_username = $_POST["settings_new_username"];
-		$settings_escaped_query = mysql_real_escape_string($_SESSION["userid"]);
-		$settings_query = mysql_query("SELECT * FROM login WHERE id = '$settings_escaped_query' LIMIT 1");
+		$settings_old_passwd = mysql_real_escape_string($_POST["settings_old_passwd"]);
+		$settings_new_passwd = mysql_real_escape_string($_POST["settings_new_passwd"]);
+		$settings_new_passwd2 = mysql_real_escape_string($_POST["settings_new_passwd2"]);
+		$settings_new_username = mysql_real_escape_string($_POST["settings_new_username"]);
+		$settings_userid = mysql_real_escape_string($_SESSION["userid"]);
+		$settings_query = mysql_query("SELECT * FROM login WHERE id = '$settings_userid' LIMIT 1");
 		$settings_return = mysql_fetch_object($settings_query);
 		if ($settings_old_passwd == "") {
 			generate_setting_template(0);
@@ -43,8 +43,7 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 			$err = false;
 			if($settings_new_passwd != "") {
 				$settings_new_passwd = md5($settings_new_passwd);
-				$settings_escaped_userid = mysql_real_escape_string($_SESSION["userid"]);
-				$settings_change_query = mysql_query("UPDATE login Set password = '$settings_new_passwd' WHERE id = '$settings_escaped_userid'");
+				$settings_change_query = mysql_query("UPDATE login Set password = '$settings_new_passwd' WHERE id = '$settings_userid'");
 			}
 			
 			if($settings_new_username != "" and $settings_new_username != $_SESSION['username']) {
@@ -57,8 +56,7 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 					}
 				else {
 					$_SESSION['username'] = $settings_new_username;
-					$settings_escaped_userid = mysql_real_escape_string($_SESSION["userid"]);
-					$settings_change_query = mysql_query("UPDATE login Set username = '$settings_new_username' WHERE id = '$settings_escaped_userid'");
+					$settings_change_query = mysql_query("UPDATE login Set username = '$settings_new_username' WHERE id = '$settings_userid'");
 				}
 			}
 			if($err != true) {
