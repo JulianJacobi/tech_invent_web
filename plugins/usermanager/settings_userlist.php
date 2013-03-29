@@ -27,11 +27,11 @@ if(!isset($_POST['step'])){
 		exit;
 	}
 	if(isset($_POST['newuser_username']) && !ctype_space($_POST['newuser_username']) && $_POST['newuser_username'] != "") {
-		$new_username = $_POST['newuser_username'];
+		$new_username = mysql_real_escape_string($_POST['newuser_username']);
 		if(!user_exists($new_username)) {
 			if(isset($_POST['newuser_passwd']) && !ctype_space($_POST['newuser_passwd']) && $_POST['newuser_passwd'] != "") {
-				$new_passwd = md5($_POST['newuser_passwd']);
-				$new_passwd2 = md5($_POST['newuser_passwd2']);
+				$new_passwd = md5(mysql_real_escape_string($_POST['newuser_passwd']));
+				$new_passwd2 = md5(mysql_real_escape_string($_POST['newuser_passwd2']));
 				if($new_passwd == $new_passwd2){
 					add_user($new_username, $new_passwd);
 					echo '<meta http-equiv="refresh" content="0; URL=./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung">';
@@ -59,6 +59,10 @@ if(!isset($_POST['step'])){
 } elseif (isset($_POST['step']) && $_POST['step'] == "del_user") {
 	global $strings;
 	include("plugins/usermanager/templates/del_user.php");
-	
+	if (isset($_POST['delete']) && $_POST['delete'] == "true") {
+		$username = mysql_real_escape_string($_POST['uname']);
+		remove_user($username);
+		echo '<meta http-equiv="refresh" content="0; URL=./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung">';
+	}
 }
 ?>
