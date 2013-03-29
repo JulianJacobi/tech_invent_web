@@ -52,6 +52,6 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 
 function generate_setting_template($setting_state)
 {
-include("/plugins/usermanager/templates/user_settings.php");
+include("plugins/usermanager/templates/user_settings.php");
 }
 ?>
