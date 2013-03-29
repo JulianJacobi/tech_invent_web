@@ -82,8 +82,8 @@ function permission_exists($permname) {
 function get_groups_for_user($username) {
 	$result = mysql_query("SELECT groups.name, (usergroups.group = groups.id) AS res FROM groups, usergroups, login WHERE login.username = '" . $username . "' AND  login.id = usergroups.userid");
 	while($row = mysql_fetch_object($result)) {
-		$name = $row['name'];
-		$bool = $row['res'];
+		$name = "$row->name";
+		$bool = "$row->res";
 		$res[$name] = $bool;
 	}
 	return $res;

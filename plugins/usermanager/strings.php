@@ -48,6 +48,10 @@ $strings['usermanager']['deluser_question2']				= " unwiederuflich löschen möc
 $strings['usermanager']['deluser_ok']						= "OK";
 $strings['usermanager']['deluser_abbr']						= "Abbrechen";
 
+//monouser
+$strings['usermanager']['monouser_rights']					= "Rechtegruppen:";
+$strings['usermanager']['monouser_rightsok']				= "Speichern";
+
 
 
 ?>
