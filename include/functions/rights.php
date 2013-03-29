@@ -63,7 +63,7 @@ function get_groups_for_user($username) {
 	while($row = mysql_fetch_object($result)) {
 		$name = $row['name'];
 		$bool = $row['res'];
-		res[$name] = $bool;
+		$res[$name] = $bool;
 	}
 	return $res;
 }
