@@ -54,7 +54,8 @@ $strings['usermanager']['monouser_rightsok']				= "Speichern";
 
 //grouplist
 $strings['usermanager']['grouplist_headline']				= "Rechtegruppen";
-$strings['usermanager']['grouplist_headline']				= "ID";
+$strings['usermanager']['grouplist_id']						= "ID";
+$strings['usermanager']['grouplist_name']					= "Gruppenname";
 
 
 

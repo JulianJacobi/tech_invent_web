@@ -17,7 +17,7 @@
 		</td></tr>
 	<?php $j = 0; ?>
 	<?php foreach ($users AS $i){ ?>
-		<tr class="usermanager_userlist_entry <?php if($j % 2 == 1){ print("usermanager_userlist_entry_hl");} ?>"><td>
+		<tr class="usermanager_userlist_entry <?php if($j % 2 == 0){ print("usermanager_userlist_entry_hl");} ?>"><td>
 			<p class="usermanager_userlist_entry"><?php print($i['id']) ?></p>
 		</td><td>
 			<p class="usermanager_userlist_entry"><?php print($i['name']) ?></p>
