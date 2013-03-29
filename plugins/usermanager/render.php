@@ -48,7 +48,7 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 			}
 			
 			if($settings_new_username != "" and $settings_new_username != $_SESSION['username']) {
-				$_SESSION['username'] = $settings_new_username;
+				
 				$settings_change_query = mysql_query("Select username FROM login WHERE username = '$settings_new_username'");
 				if (mysql_num_rows($settings_change_query) >= 1) {
 					generate_setting_template(4);
@@ -56,6 +56,7 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 					$err = true;
 					}
 				else {
+					$_SESSION['username'] = $settings_new_username;
 					$settings_escaped_userid = mysql_real_escape_string($_SESSION["userid"]);
 					$settings_change_query = mysql_query("UPDATE login Set username = '$settings_new_username' WHERE id = '$settings_escaped_userid'");
 				}
