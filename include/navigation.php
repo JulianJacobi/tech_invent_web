@@ -15,6 +15,8 @@ foreach ($nav_menu AS $plugin => $plugin_menu) {
     }
     echo "</div>";
 }
+$name = $_SESSION['username'];
+echo "<div id='username'>$name</div>";
 
 echo "</div>";
 

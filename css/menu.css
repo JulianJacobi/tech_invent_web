@@ -29,3 +29,10 @@ div.menu_item a{
 div.menu_item a:hover{
 	color: white;
 }
+
+div#username{
+	display: block;
+	float: right;
+	color: lightgrey;
+	padding: 0px 20px;
+}
