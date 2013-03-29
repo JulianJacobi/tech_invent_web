@@ -4,7 +4,7 @@ session_start();
  * Index File for TechInvent
  *
  * @author Julian jacobi
- * @version 2013-03-28
+ * @version 2013-03-29
  */
 
 //Basic Functions
@@ -16,12 +16,8 @@ include("include/connect.php");
 //HTML Header
 include("templates/html_head.php");
 
-
 //Login Scripts
 require_once("include/auth.php");
-
-//Static text for Testing
-include("include/test.php");
 
 //Navigationbar
 include("include/navigation.php");

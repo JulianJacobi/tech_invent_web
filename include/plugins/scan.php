@@ -6,7 +6,7 @@ $file = fopen($filename, "w");
 $new_list = "";
 
 foreach ($list AS $i => $v) {
-    if ($v == "" || $v == "." || $v == "..")
+    if ($v == "" || $v == "." || $v == ".." || $v == ".DS_Store")
         continue;
     $new_list = $new_list . $v . "\n";
 }
