@@ -15,6 +15,8 @@ if(!isset($_POST['step'])){
 	global $strings;
 	include("plugins/usermanager/templates/userlist.php");
 } elseif (isset($_POST['step']) && $_POST['step'] == "user_mono") {
+	$userid = $_POST['uid'];
+	$username = $_POST['uname'];
 	global $strings;
 	include("plugins/usermanager/templates/user_mono.php");
 }

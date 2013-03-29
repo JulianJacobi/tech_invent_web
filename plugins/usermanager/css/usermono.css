@@ -1,0 +1,14 @@
+div#usermanager_monouser {
+	background-color: #343434;
+	width: 35em;
+	margin: 0px auto 0px auto;
+	border-radius: 0px 0px 10px 10px;
+	padding: 10px;
+}
+
+p#usermanager_monouser_headline {
+	color: lightgrey;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}

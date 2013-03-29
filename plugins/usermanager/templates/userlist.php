@@ -19,10 +19,10 @@
 			<p class="usermanager_userlist_entry"><?php print($i['pass']) ?></p>
 		</td><td>
 			<form action="./?plugin=settings&mode=usermanager&modul=Nutzerliste" method="post">
-				<input type="submit" value="<?php print($strings['usermanager']['userlist_edit']) ?>" class="system_button usermanager_userlist_editbutton">
 				<input type="hidden" name="step" value="user_mono">
 				<input type="hidden" name="uid" value="<?php print($i['id']) ?>">
-				<imput type="hidden" name="uname" value="<?php print($i['name']) ?>">
+				<input type="hidden" name="uname" value="<?php print($i['name']) ?>">
+				<input type="submit" value="<?php print($strings['usermanager']['userlist_edit']) ?>" class="system_button usermanager_userlist_editbutton">
 			</form>
 		</td></tr>
 	<?php $j++; ?>

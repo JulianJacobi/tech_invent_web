@@ -23,7 +23,7 @@ $strings['usermanager']['user_settings_error4']				= "Beutzername existiert scho
 
 //userlist
 
-$strings['usermanager']['userlist_headline']				= "Nutzerliste";
+$strings['usermanager']['userlist_headline']				= "Benutzerverwaltung";
 $strings['usermanager']['userlist_head_id']					= "ID";
 $strings['usermanager']['userlist_head_name']				= "Benutzername";
 $strings['usermanager']['userlist_head_pass']				= "Passwort (MD5-hash)";
