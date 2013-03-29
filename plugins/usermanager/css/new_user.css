@@ -1,0 +1,48 @@
+div#usermanager_newuser {
+	width: 30em;
+	margin: 0px auto 0px auto;
+	background-color: #343434;
+	padding: 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+form#usermanager_newuser {
+	text-align: center;
+}
+
+p#usermanager_newuser_headline {
+	color: lightgrey;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+p.usermanager_newuser_label {
+	color: lightgrey;
+	text-align: left;
+	margin-left: 5em;
+}
+
+input.usermanager_newuser {
+	width: 20em;
+}
+
+input.usermanager_newuser_button {
+	text-align: right;
+	margin-top: 20px;
+}
+
+p.usermanager_newuser_error {
+	color: red;
+	margin: 0px;
+	font-size: 12px;
+}
+
+p.usermanager_newuser_success {
+	color: lightgrey;
+	font-weight: bold;
+	text-align: center;
+	margin-top: -20px;
+	margin: 0px;
+}
