@@ -46,7 +46,8 @@ function add_user($username, $password) {
 }
 
 function remove_user($username) {
-	$id = mysql_fetch_assoc(mysql_query("SELECT id FROM login WHERE username = '" . $username . "';"))['id'];
+	$result = mysql_fetch_assoc(mysql_query("SELECT id FROM login WHERE username = '" . $username . "';"));
+	$id = $result['id'];
 	mysql_query("DELETE FROM usergroups WHERE userid = " . $id);
 	mysql_query("DELETE FROM login WHERE username = '" . $username . "';");
 }
@@ -57,7 +58,8 @@ function add_group($groupname, $description) {
 }
 
 function remove_group($groupname) {
-	$id = mysql_fetch_assoc(mysql_query("SELECT id FROM groups WHERE name = '" . $groupname . "';"))['id'];
+	$result = mysql_fetch_assoc(mysql_query("SELECT id FROM groups WHERE name = '" . $groupname . "';"));
+	$id = $result['id'];
 	mysql_query("DELETE FROM usergroups WHERE group = " . $id);
 	mysql_query("DELETE FROM groupsperms WHERE group = " . $id);
 	mysql_query("DELETE FROM groups WHERE name = '" . $groupname . "';");
@@ -69,7 +71,8 @@ function add_permission($permname, $description) {
 }
 
 function remove_permission($permname) {
-	$id = mysql_fetch_assoc(mysql_query("SELECT id FROM perms WHERE name = '" . $permname . "';"))['id'];
+	$result = mysql_fetch_assoc(mysql_query("SELECT id FROM perms WHERE name = '" . $permname . "';"));
+	$id = $result['id'];
 	mysql_query("DELETE FROM groupsperms WHERE group = " . $id);
 	mysql_query("DELETE FROM perms WHERE name = '" . $permname . "';");
 }
