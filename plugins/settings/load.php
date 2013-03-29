@@ -6,8 +6,8 @@
  * @version 2013-03-29
  */
 
-add_menu_item("settings", "Einstellungen", "main");
+add_menu_item("settings", "Einstellungen", "settings");
 
-add_settings_item("settings", "Einstellungen")
+add_settings_item("settings", "Main")
 
 ?>

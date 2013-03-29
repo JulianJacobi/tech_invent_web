@@ -1,6 +1,10 @@
 div#settings_menu {
 	background-color: lightgrey;
-	height: 1,5em;
+	height: 1.5em;
 	width: 100%;
 	
+}
+
+div.settings_menu_item {
+	text-decoration: none;
 }
