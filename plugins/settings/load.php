@@ -8,6 +8,6 @@
 
 add_menu_item("settings", "Einstellungen", "settings");
 
-add_settings_item("settings", "Main")
+add_settings_item("settings", "Main", "Haupteinstellungen", "settings")
 
 ?>
