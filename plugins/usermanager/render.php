@@ -2,7 +2,8 @@
 /*
  * Usermanagement for TechInvent
  *
- * @author Malte Kießling & Lukas Klingberg
+ * @author Malte Kießling
+ * @author Lukas Klingberg
  * @version 2013-03-29
  */
 
@@ -14,12 +15,18 @@ $settings_new_username = $_SESSION["username"];
 //Nutzerliste
 if (isset($_GET['mode']) && $_GET['mode'] == "show_users") {
 	$e = mysql_query("SELECT * FROM login");
+	$i = 0;
     while($row = mysql_fetch_assoc($e)) {
         $id = $row['id'];
         $name = $row['username'];
         $pass = $row['password'];
-        echo "Id:$id, Name:$name, Pass:$pass<br>";
+        $users[$i]['id'] = $id;
+        $users[$i]['name'] = $name;
+        $users[$i]['pass'] = $pass;
+        $i++;
     }
+	global $strings;
+    include("plugins/usermanager/templates/userlist.php");
 }
 
 //Einstellungen
