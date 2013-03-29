@@ -8,3 +8,19 @@
 body {
 	margin: 0px;
 }
+
+input.system_input_text {
+	font-family: arial;
+	background: transparent;
+	border: 1px solid lightgrey;
+	color: lightgrey;
+	border-radius: 5px;
+}
+
+input.system_button {
+	font-family: arial;
+	background: transparent;
+	border: 1px solid lightgrey;
+	color: lightgrey;
+	border-radius: 5px;
+}
