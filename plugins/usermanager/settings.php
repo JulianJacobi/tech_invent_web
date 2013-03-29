@@ -1,4 +1,9 @@
 <?php
+include("plugins/usermanager/strings.php");
+//Globals
+global $settings_new_username;
+$settings_new_username = $_SESSION["username"];
+
 if(isset($_POST["settings_old_passwd"]) and isset($_POST["settings_new_passwd"]) and isset($_POST["settings_new_passwd2"]) and isset($_POST["settings_new_username"]) ) {
 		$settings_old_passwd = $_POST["settings_old_passwd"];
 		$settings_new_passwd = $_POST["settings_new_passwd"];
