@@ -8,7 +8,8 @@
 
 //user_settigs
 
-$strings['usermanager']['user_settigs_headline']			= "Benutzereinstellungen";
+global $strings;
 
+$strings['usermanager']['user_settings_headline']			= "Benutzereinstellungen";
 
 ?>
