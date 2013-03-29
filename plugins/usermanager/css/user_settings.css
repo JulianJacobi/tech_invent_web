@@ -5,3 +5,36 @@
  * @version 2013-03-29
  */
 
+div#user_settings {
+	width: 30em;
+	margin: 0px auto 0px auto;
+	background-color: #343434;
+	padding: 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+form#usermanager_user_settings {
+	text-align: center;
+}
+
+p#usermanager_user_settings_headline {
+	color: lightgrey;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+
+p.usermanager_user_settings_label {
+	color: lightgrey;
+	text-align: left;
+	margin-left: 5em;
+}
+
+input.usermanager_user_settings {
+	width: 20em;
+}
+
+input.usermanager_user_settings_button {
+	text-align: right;
+	margin-top: 20px;
+}
