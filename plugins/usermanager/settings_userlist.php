@@ -35,7 +35,7 @@ if(!isset($_POST['step'])){
 				$new_passwd = md5($_POST['newuser_passwd']);
 				$new_passwd2 = md5($_POST['newuser_passwd2']);
 				if($new_passwd == $new_passwd2){
-					
+					add_user($new_username, $new_passwd);
 					echo '<meta http-equiv="refresh" content="0; URL=./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung">';
 				} else {
 					global $string;
