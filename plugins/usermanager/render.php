@@ -30,8 +30,8 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 		$settings_new_passwd = $_POST["settings_new_passwd"];
 		$settings_new_passwd2 = $_POST["settings_new_passwd2"];
 		$settings_new_username = $_POST["settings_new_username"];
-		$settings_escaped_query = mysql_real_escape_string($_SESSION["username"]);
-		$settings_query = mysql_query("SELECT * FROM login WHERE username = '$settings_escaped_query' LIMIT 1");
+		$settings_escaped_query = mysql_real_escape_string($_SESSION["userid"]);
+		$settings_query = mysql_query("SELECT * FROM login WHERE id = '$settings_escaped_query' LIMIT 1");
 		$settings_return = mysql_fetch_object($settings_query);
 		if ($settings_old_passwd == "") {
 			generate_setting_template(0);
@@ -52,6 +52,7 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 				$settings_change_query = mysql_query("Select username FROM login WHERE username = '$settings_new_username'");
 				if (mysql_num_rows($settings_change_query) >= 1) {
 					generate_setting_template(4);
+					echo mysql_num_rows($settings_change_query);
 					$err = true;
 					}
 				else {
