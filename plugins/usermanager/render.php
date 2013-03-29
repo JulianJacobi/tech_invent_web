@@ -24,7 +24,7 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 			generate_setting_template(0);
 			}
 		else if ($settings_new_passwd != $settings_new_passwd2) {
-			generate_setting_temlate(1);
+			generate_setting_template(1);
 		}
 		else if ((md5(md5($settings_old_passwd).$_SESSION["username"])) == md5($settings_return->username.$settings_return->password)) {
 			if($settings_new_passwd != "") {
@@ -38,13 +38,16 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 				$settings_escaped_userid = mysql_real_escape_string($_SESSION["userid"]);
 				$settings_change_query = mysql_query("UPDATE login Set username = '$settings_new_username' WHERE id = '$settings_escaped_userid'");
 			}
-			generate_setting_temlate(3);
+			generate_setting_template(3);
 		} 
 		else {
-			generate_setting_temlate(2);
+			generate_setting_template(2);
 		}
 			
 	}
+	else {
+		generate_setting_template(0);
+		}
 }
 
 function generate_setting_template($setting_state)
