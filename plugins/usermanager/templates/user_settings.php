@@ -3,6 +3,11 @@
 	<p id="usermanager_user_settings_headline"><?php print($strings['usermanager']['user_settings_headline']); ?>
 	<form action="./?plugin=usermanager&mode=user_settings" method="post" id="usermanager_user_settings">
 		<p class="usermanager_user_settings_label"><?php print($strings['usermanager']['user_settings_username']); ?></p>
+		<?php
+		if($settings_state == 4) {
+			print('<p class="usermanager_user_settings_error">'.$strings['usermanager']['user_settings_error4'].'</p>');
+		}
+		?>
 		<input type="text" name="settings_new_username" class="system_input_text usermanager_user_settings" value="<?php print($settings_new_username); ?>">
 		
 		<p class="usermanager_user_settings_label"><?php print($strings['usermanager']['user_settings_old_passwd']); ?></p>
