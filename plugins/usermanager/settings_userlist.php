@@ -34,6 +34,7 @@ if(!isset($_POST['step'])){
 	if(!isset($_POST['newuser_username']) || !isset($_POST['newuser_passwd']) || !isset($_POST['newuser_passwd2'])){
 		global $string;
 		$new_username = "";
+		$error = 0;
 		include("plugins/usermanager/templates/new_user.php");
 		exit;
 	}
