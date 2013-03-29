@@ -4,7 +4,7 @@
 	<form action="./?plugin=usermanager&mode=user_settings" method="post" id="usermanager_user_settings">
 		<p class="usermanager_user_settings_label"><?php print($strings['usermanager']['user_settings_username']); ?></p>
 		<?php
-		if($settings_state == 4) {
+		if($setting_state == 4) {
 			print('<p class="usermanager_user_settings_error">'.$strings['usermanager']['user_settings_error4'].'</p>');
 		}
 		?>
