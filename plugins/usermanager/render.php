@@ -8,6 +8,7 @@
 
 include("plugins/usermanager/strings.php");
 //Globals
+global $settings_new_username;
 $settings_new_username = $_SESSION["username"];
 
 //Nutzerliste
@@ -72,8 +73,9 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 		}
 }
 
-function generate_setting_template($setting_state)
-{
-include("plugins/usermanager/templates/user_settings.php");
+function generate_setting_template($setting_state) {
+	global $strings;
+	global $settings_new_username;
+	include("plugins/usermanager/templates/user_settings.php");
 }
 ?>
