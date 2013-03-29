@@ -37,6 +37,8 @@ $strings['usermanager']['newuser_passwd']					= "Passwort:";
 $strings['usermanager']['newuser_repeat_passwd']			= "Wiederholung:";
 $strings['usermanager']['newuser_add']						= "Hinzufügen";
 $strings['usermanager']['newuser_error1']					= "Benutzername ungültig!";
+$strings['usermanager']['newuser_error2']					= "Passwort ungültig!";
+$strings['usermanager']['newuser_error3']					= "Passwörter stimmen nicht überein!"
 
 
 
