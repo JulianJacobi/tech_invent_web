@@ -40,6 +40,15 @@ function remove_permission_from_group($permissionname, $groupname) {
 	mysql_query("DELETE FROM groupperms WHERE groupperms.group = '" . $groupid . "' AND groupperms.perm = '" . $permid . "');");
 }
 
+function add_user($username, $password) {
+	if (mysql_num_rows(mysql_query("SELECT * FROM login WHERE name = '" . $username . "';")) == 0)
+		mysql_query("INSERT INTO login (`id`, `username`, `password`) VALUES (NULL, '" . $username . "', '" . $password . "');");
+}
+
+function remove_user($username) {
+	mysql_query("DELETE FROM login WHERE username = '" . $username . "';");
+}
+
 function add_group($groupname, $description) {
 	if (mysql_num_rows(mysql_query("SELECT * FROM groups WHERE name = '" . $groupname . "';")) == 0)
 		mysql_query("INSERT INTO groups (`id`, `name`, `description`) VALUES (NULL, '" . $groupname . "', '" . $description . "');");
