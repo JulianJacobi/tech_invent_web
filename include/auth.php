@@ -22,9 +22,6 @@ if (!isset($_SESSION["login"]) || isset($_GET["plugin"]) && $_GET["plugin"] == "
 	generate_login(false);	
 }
 
-if (!has_permission("user_login")) {
-	generate_login("true");
-}
 //Erstellen und leeren der Roh-Variablen
  
 $raw_login_user = "";
@@ -81,6 +78,10 @@ else {
 	else {
 		generate_login(true);
 	}
+	
+	if (!has_permission("user_login")) {
+	generate_login("true");
+}
 }
 //Das is die Funktion, die im falle das Irgentwas mit Login passiert aufgerufen wird.
 function generate_login($error)
