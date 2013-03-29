@@ -7,6 +7,8 @@
  */
 
 include("plugins/usermanager/strings.php");
+//Globals
+$settings_new_username = $_SESSION["username"];
 
 //Nutzerliste
 if (isset($_GET['mode']) && $_GET['mode'] == "show_users") {
@@ -20,6 +22,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == "show_users") {
 }
 
 //Einstellungen
+
 else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 	if(isset($_POST["settings_old_passwd"]) and isset($_POST["settings_new_passwd"]) and isset($_POST["settings_new_passwd2"]) and isset($_POST["settings_new_username"]) ) {
 		$settings_old_passwd = $_POST["settings_old_passwd"];
@@ -36,18 +39,28 @@ else if (isset($_GET['mode']) && $_GET['mode'] == "user_settings") {
 			generate_setting_template(1);
 		}
 		else if (md5($_SESSION["username"].md5($settings_old_passwd)) == md5($settings_return->username.$settings_return->password)) {
+			$err = false;
 			if($settings_new_passwd != "") {
 				$settings_new_passwd = md5($settings_new_passwd);
 				$settings_escaped_userid = mysql_real_escape_string($_SESSION["userid"]);
 				$settings_change_query = mysql_query("UPDATE login Set password = '$settings_new_passwd' WHERE id = '$settings_escaped_userid'");
 			}
 			
-			if($settings_new_username != "") {
+			if($settings_new_username != "" and $settings_new_username != $_SESSION['username']) {
 				$_SESSION['username'] = $settings_new_username;
-				$settings_escaped_userid = mysql_real_escape_string($_SESSION["userid"]);
-				$settings_change_query = mysql_query("UPDATE login Set username = '$settings_new_username' WHERE id = '$settings_escaped_userid'");
+				$settings_change_query = mysql_query("Select username FROM login WHERE username = '$settings_new_username'");
+				if (mysql_num_rows($settings_change_query >= 1)) {
+					generate_setting_template(4);
+					$err = true;
+					}
+				else {
+					$settings_escaped_userid = mysql_real_escape_string($_SESSION["userid"]);
+					$settings_change_query = mysql_query("UPDATE login Set username = '$settings_new_username' WHERE id = '$settings_escaped_userid'");
+				}
 			}
-			generate_setting_template(3);
+			if($err != true) {
+				generate_setting_template(3);
+			}
 		} 
 		else {
 			generate_setting_template(2);
