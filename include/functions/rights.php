@@ -108,13 +108,13 @@ function set_groups_for_user($username, $new) {
 	}
 }
 
-function get_permissions_for_group($username) {
-	$result = mysql_query("SELECT name FROM groups");
+function get_permissions_for_group($groupname) {
+	$result = mysql_query("SELECT name FROM perms");
 	while($row = mysql_fetch_assoc($result)) {
 		$name = $row['name'];
 		$res[$name] = 0;
 	}
-	$result = mysql_query("SELECT groups.name FROM groups, usergroups, login WHERE login.username = '" . $username . "' AND login.id = usergroups.userid AND usergroups.group = groups.id");
+	$result = mysql_query("SELECT perms.name FROM perms, groupperms, groups WHERE groups.name = '" . $groupname . "' AND groups.id = groupperms.group AND groupperms.perm = perms.id");
 	while($row = mysql_fetch_assoc($result)) {
 		$name = $row['name'];
 		$res[$name] = 1;
@@ -122,16 +122,16 @@ function get_permissions_for_group($username) {
 	return $res;
 }
 
-function set_permissions_for_group($username, $new) {
-	$old = get_groups_for_user($username);
+function set_permissions_for_group($groupname, $new) {
+	$old = get_permissions_for_group($groupname);
 	foreach ($old AS $name => $bool) {
 		if ($bool == $new[$name])
 			continue;
 		if ($bool == true && $new[$name] == false) {
-			remove_user_from_group($username, $name);
+			remove_permission_from_group($groupname, $name);
 			//echo "del:" . $username . ":" . $name . ";<br>";
 		} else {
-			add_user_to_group($username, $name);
+			add_permission_to_group($groupname, $name);
 			//echo "add:" . $username . ":" . $name . ";<br>";
 		}
 	}
