@@ -3,6 +3,7 @@ session_start();
 $get_string = "./?";
 foreach ($_GET AS $name => $val)
 	$get_string = $get_string . $name . "=" . $val . "&";
+include("include/connect.php"); // database connection
 /*
  * Index File for TechInvent
  *
@@ -14,7 +15,6 @@ foreach ($_GET AS $name => $val)
 include("include/functions/include.php");
 include("include/strings.php");
 include("include/plugins/include.php");
-include("include/connect.php");
 
 //HTML Header
 include("templates/html_head.php");

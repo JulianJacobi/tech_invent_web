@@ -12,7 +12,7 @@ global $strings;
 
 $strings['usermanager']['menu_name']				= "Benutzerverwaltung";
 
-$strings['usermanager']['user_settings_headline']			= "Benutzereinstellungen ändern";
+$strings['usermanager']['user_settings_headline']			= "Benutzereinstellungen Ã¤ndern";
 $strings['usermanager']['user_settings_username']			= "Benutzername:";
 $strings['usermanager']['user_settings_old_passwd']			= "Passwort:";
 $strings['usermanager']['user_settings_new_passwd']			= "Neues Passwort:";
@@ -62,10 +62,14 @@ $strings['usermanager']['grouplist_description']			= "Beschreibung";
 $strings['usermanager']['grouplist_add']					= "Add";
 $strings['usermanager']['grouplist_edit']					= "Edit";
 $strings['usermanager']['grouplist_del']					= "Del";
-$strings['usermanager']['groupoverview']					= "Übersicht";
+
+$strings['usermanager']['permissionoverview']				= "&Uuml;bersicht der Benutzerrechte";
+$strings['usermanager']['groupoverview']					= "&Uuml;bersicht der Gruppenrechte";
+$strings['usermanager']['useroverview']						= "&Uuml;bersicht der Benutzergruppen";
 
 //monogroup
 $strings['usermanager']['monogroup_headline']				= "Gruppeneinstellungen";
+$strings['usermanager']['monogroup_done']					= "Gespeichert!";
 $strings['usermanager']['monogroup_rights']					= "Rechte: ";
 $strings['usermanager']['monogroup_rightsok']				= "Speichern";
 

@@ -1,3 +1,6 @@
+<?php 
+global $strings, $get_string;
+?>
 <link href="plugins/usermanager/css/user_settings.css" rel="stylesheet" type="text/css">
 <div id="user_settings">
 	<p id="usermanager_user_settings_headline"><?php print($strings['usermanager']['user_settings_headline']); ?></p>
@@ -6,7 +9,7 @@
 		print('<p class="usermanager_user_settings_success">'.$strings['usermanager']['user_settings_error3'].'</p>');
 	}
 	?>
-	<form action="./?plugin=usermanager&mode=user_settings" method="post" id="usermanager_user_settings">
+	<form action="<?php print($get_string); ?>" method="post" id="usermanager_user_settings">
 		<p class="usermanager_user_settings_label"><?php print($strings['usermanager']['user_settings_username']); ?></p>
 		<?php
 		if($setting_state == 4) {

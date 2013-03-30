@@ -1,7 +1,10 @@
+<?php 
+global $strings, $get_string;
+?>
 <link href="plugins/usermanager/css/new_user.css" rel="stylesheet" type="text/css">
 <div id="usermanager_newuser">
 	<p id="usermanager_newuser_headline"><?php print($strings['usermanager']['newuser_headline']); ?></p>
-	<form action="./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung" method="post" id="usermanager_newuser">
+	<form action="<?php print($get_string); ?>" method="post" id="usermanager_newuser">
 		<input type="hidden" name="step" value="add_user">
 		<p class="usermanager_newuser_label"><?php print($strings['usermanager']['newuser_username']); ?></p>
 		<?php

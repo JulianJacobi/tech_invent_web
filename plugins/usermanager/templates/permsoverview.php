@@ -7,25 +7,25 @@ global $strings, $get_string;
 	<table align="center">
 	<tr><td></td>
 	<?php
-	$abfrage_gruppen = mysql_query("SELECT * FROM groups");
+	$abfrage_gruppen = mysql_query("SELECT * FROM login");
 	$j = 0;
 	while($row = mysql_fetch_object($abfrage_gruppen)) {
 		?>
 		<td class="usermanager_groupoverview_head <?php if($j % 2  == 0){ print("usermanager_groupoverview_head_hl"); } ?>">
-			<p><?php print("$row->name"); ?></p>
+			<p><?php print("$row->username"); ?></p>
 		</td>
 		<?php
-		$groups[$row->name] = $j;
+		$users[$row->username] = $row->id;
 		$j++;
 	}
 	?>
 	</tr>
 	<?php 
 	$groupperms = null;
-	foreach ($groups AS $name => $num) {
-		$perms = get_permissions_for_group($name);
-		foreach ($perms AS $perm => $val) {
-			$groupperms[$perm][$num] = $val;
+	foreach ($users AS $name => $num) {
+		$abfrage_gruppen = mysql_query("SELECT * FROM perms ORDER BY name");
+		while($row = mysql_fetch_assoc($abfrage_gruppen)) {
+			$groupperms[$row['name']][$name] = has_userid_permission($num, $row['name']);
 		}
 	}
 	$j = 0;
@@ -40,26 +40,11 @@ global $strings, $get_string;
 			<?php
 		}
 		?>
-		<td>
-		<form action="<?php print($get_string); ?>" method="post">
-			<input type="hidden" name="step" value="del_perm">
-			<input type="hidden" name="pname" value="<?php print($perm); ?>">
-			<input type="submit" value="<?php print($strings['usermanager']['grouplist_del']); ?>" class="system_button usermanager_grouplist_button">
-		</form>
-		</td></tr>
+		</tr>
 		<?php 
 		$j++;
 	}
 	?>
-	<tr class="usermanager_grouplist_entry"><td colspan="3">
-		<form action="<?php print($get_string); ?>" method="post">
-			<input type="hidden" name="step" value="add_perm">
-			<input type="text" name="pname" class="system_input_text usermanager_grouplist_text">
-	</td><td>
-			<input type="submit" value="<?php print($strings['usermanager']['grouplist_add']); ?>" class="system_button">
-		</form>
-	</td><td>
-	</td></tr>
 	</table>	
 	<a href="<?php print($get_string); ?>"><button class="system_backbutton"><?php print($strings['main']['backbutton']); ?></button></a>
 </div>

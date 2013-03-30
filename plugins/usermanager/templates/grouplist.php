@@ -1,3 +1,6 @@
+<?php 
+global $strings, $get_string;
+?>
 <link href="plugins/usermanager/css/grouplist.css" rel="stylesheet" type="text/css">
 <div id="usermanager_grouplist">
 	<p id="usermanager_grouplist_headline"><?php print($strings['usermanager']['grouplist_headline']); ?></p>
@@ -10,7 +13,7 @@
 		<p><?php print($strings['usermanager']['grouplist_description']); ?></p>
 	</td></tr>
 	<tr class="usermanager_grouplist_entry"><td></td><td valign="top">
-		<form action="./?plugin=settings&mode=usermanager&modul=Rechtegruppen" method="post">
+		<form action="<?php print($get_string); ?>" method="post">
 			<input type="hidden" name="step" value="new_groups">
 			<input type="text" name="gname" class="system_input_text usermanager_grouplist_text">
 	</td><td>
@@ -40,14 +43,13 @@
 		</td><td>
 			<p class="usermanager_grouplist_description"><?php print($description); ?></p>
 		</td><td valign="middle">
-			<form action="./?plugin=settings&mode=usermanager&modul=Rechtegruppen" method="post">
+			<form action="<?php print($get_string); ?>" method="post">
 				<input type="hidden" name="step" value="edit_groups">
-				<input type="hidden" name="edit" value="perms">
 				<input type="hidden" name="gname" value="<?php print("$row->name"); ?>">
 				<input type="submit" value="<?php print($strings['usermanager']['grouplist_edit']); ?>" class="system_button usermanager_grouplist_button">
 			</form>
 		</td><td valign="middle">
-			<form action="./?plugin=settings&mode=usermanager&modul=Rechtegruppen" method="post">
+			<form action="<?php print($get_string); ?>" method="post">
 				<input type="hidden" name="step" value="del_groups">
 				<input type="hidden" name="gname" value="<?php print("$row->name"); ?>">
 				<input type="submit" value="<?php print($strings['usermanager']['grouplist_del']); ?>" class="system_button usermanager_grouplist_button">
@@ -57,10 +59,15 @@
 		$j++;
 	}
 	?>
-	<tr><td colspan="5">
-		<form action="./?plugin=settings&mode=usermanager&modul=Rechtegruppen" method="post">
+	<tr><td colspan="2">
+		<form action="<?php print($get_string); ?>" method="post">
 			<input type="hidden" name="step" value="group_overview">
 			<input type="submit" value="<?php print($strings['usermanager']['groupoverview']); ?>" class="system_button">
+		</form>
+		</td><td colspan="3">
+		<form action="<?php print($get_string); ?>" method="post">
+			<input type="hidden" name="step" value="perm_overview">
+			<input type="submit" value="<?php print($strings['usermanager']['permissionoverview']); ?>" class="system_button">
 		</form>
 		</td></tr>
 	</table>

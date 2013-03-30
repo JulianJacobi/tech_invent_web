@@ -1,8 +1,11 @@
+<?php 
+global $strings, $get_string;
+?>
 <link href="plugins/usermanager/css/usermono.css" rel="stylesheet" type="text/css">
 <div id="usermanager_monouser">
 	<p id="usermanager_monouser_headline"><?php print($strings['usermanager']['userlist_headline']." (".$username.")"); ?></p>
 	<p class="usermanager_monouser_label"><?php print($strings['usermanager']['monouser_rights']); ?></p>
-	<form action="./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung" method="post">
+	<form action="<?php print($get_string); ?>" method="post">
 		<input type="hidden" name="step" value="user_mono">
 		<input type="hidden" name="edit" value="groups">
 		<input type="hidden" name="uname" value="<?php print($_POST['uname']); ?>">
@@ -16,5 +19,5 @@
 	?>
 		<input type="submit" value="<?php print($strings['usermanager']['monouser_rightsok']); ?>" class="system_button usermanager_monouser_button">
 	</form>
-	<a href="./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung"><button class="system_backbutton"><?php print($strings['main']['backbutton']); ?></button></a>
+	<a href="<?php print($get_string); ?>"><button class="system_backbutton"><?php print($strings['main']['backbutton']); ?></button></a>
 </div>

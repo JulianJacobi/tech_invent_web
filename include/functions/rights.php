@@ -1,8 +1,17 @@
 <?php
+
+function has_userid_permission($user, $perm) {
+	$result = mysql_query("SELECT perms.id FROM perms, groupperms, usergroups WHERE usergroups.group = groupperms.group AND groupperms.perm = perms.id AND perms.name = '" . $perm . "' AND usergroups.userid = " . $user);
+	if ($result != null AND mysql_num_rows($result) > 0)
+		return true;
+		
+	return false;
+}
+
 function has_permission($perm) {
 	$escaped_user_id = mysql_real_escape_string($_SESSION['userid']);
 	$result = mysql_query("SELECT perms.id FROM perms, groupperms, usergroups WHERE usergroups.group = groupperms.group AND groupperms.perm = perms.id AND perms.name = '" . $perm . "' AND usergroups.userid = " . $escaped_user_id);
-	if ($result != null AND mysql_num_rows($result) == 1)
+	if ($result != null AND mysql_num_rows($result) > 0)
 		return true;
 		
 	return false;
@@ -37,7 +46,8 @@ function remove_permission_from_group($permissionname, $groupname) {
 	$row = mysql_fetch_assoc($result);
 	$permid = $row['permid'];
 	$groupid = $row['groupid'];
-	mysql_query("DELETE FROM groupperms WHERE groupperms.group = '" . $groupid . "' AND groupperms.perm = '" . $permid . "');");
+	echo $permid;
+	mysql_query("DELETE FROM groupperms WHERE groupperms.group = '" . $groupid . "' AND groupperms.perm = '" . $permid . "';");
 }
 
 function add_user($username, $password) {
@@ -73,7 +83,7 @@ function add_permission($permname, $description) {
 function remove_permission($permname) {
 	$result = mysql_fetch_assoc(mysql_query("SELECT id FROM perms WHERE name = '" . $permname . "';"));
 	$id = $result['id'];
-	mysql_query("DELETE FROM groupsperms WHERE group = " . $id);
+	mysql_query("DELETE FROM groupsperms WHERE perm = " . $id);
 	mysql_query("DELETE FROM perms WHERE name = '" . $permname . "';");
 }
 
@@ -90,7 +100,7 @@ function permission_exists($permname) {
 }
 
 function get_groups_for_user($username) {
-	$result = mysql_query("SELECT name FROM groups");
+	$result = mysql_query("SELECT name FROM groups ORDER BY name");
 	while($row = mysql_fetch_assoc($result)) {
 		$name = $row['name'];
 		$res[$name] = 0;
@@ -119,7 +129,7 @@ function set_groups_for_user($username, $new) {
 }
 
 function get_permissions_for_group($groupname) {
-	$result = mysql_query("SELECT name FROM perms");
+	$result = mysql_query("SELECT name FROM perms ORDER BY name");
 	while($row = mysql_fetch_assoc($result)) {
 		$name = $row['name'];
 		$res[$name] = 0;

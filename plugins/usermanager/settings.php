@@ -3,12 +3,12 @@ include("plugins/usermanager/strings.php");
 //Globals
 global $settings_new_username;
 $settings_new_username = $_SESSION["username"];
-if ($_GET['part'] == "settings_userlist") {
+if ($_GET['part'] == "settings_userlist" && has_permission("users_view_list")) {
 	include("plugins/usermanager/settings_userlist.php");
-} elseif ($_GET['part'] == "settings_groups") {
+} elseif ($_GET['part'] == "settings_groups" && has_permission("groups_view_list")) {
 	include("plugins/usermanager/settings_groups.php");
 } else {
-	if (has_permission("user.view.data"))
+	if (has_permission("userdata_view"))
 		if(isset($_POST["settings_old_passwd"]) and isset($_POST["settings_new_passwd"]) and isset($_POST["settings_new_passwd2"]) and isset($_POST["settings_new_username"]) AND has_permission("user.edit.data")) {
 			$settings_old_passwd = $_POST["settings_old_passwd"];
 			$settings_new_passwd = $_POST["settings_new_passwd"];

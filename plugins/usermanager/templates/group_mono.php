@@ -1,9 +1,13 @@
+<?php 
+global $strings, $get_string;
+?>
 <link href="plugins/usermanager/css/group_mono.css" rel="stylesheet" type="text/css">
 <div id="usermanager_monogroup">
 	<p id="usermanager_monogroup_headline"><?php print($strings['usermanager']['monogroup_headline']." (".$_POST['gname'].")") ?></p>
+	<p id="usermanager_monogroup_status"><?php if (isset($done)) print($strings['usermanager']['monogroup_done']) ?></p>
 	
 	<p class="usermanager_monogroup_label"><?php print($strings['usermanager']['monogroup_rights']) ?></p>
-	<form action="./?plugin=settings&mode=usermanager&modul=Rechtegruppen" method="post">
+	<form action="<?php print($get_string); ?>" method="post">
 		<input type="hidden" name="step" value="edit_groups">
 		<input type="hidden" name="edit" value="perms">
 		<input type="hidden" name="gname" value="<?php print($_POST['gname']) ?>">
@@ -18,5 +22,5 @@
 	?>
 	<input type="submit" value="<?php print($strings['usermanager']['monogroup_rightsok']); ?>" class="system_button">
 	</form>
-	<a href="./?plugin=settings&mode=usermanager&modul=Rechtegruppen"><button class="system_backbutton"><?php print($strings['main']['backbutton']); ?></button></a>
+	<a href="<?php print($get_string); ?>"><button class="system_backbutton"><?php print($strings['main']['backbutton']); ?></button></a>
 </div>
