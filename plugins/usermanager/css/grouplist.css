@@ -1,6 +1,6 @@
 div#usermanager_grouplist {
 	background-color: #343434;
-	width: 25em;
+	width: 35em;
 	margin: 0px auto 0px auto;
 	padding: 10px 10px 20px 10px;
 	border-radius: 0px 0px 10px 10px;
@@ -14,25 +14,45 @@ p#usermanager_grouplist_headline {
 }
 
 tr.usermanager_grouplist_head {
-	background: rgba(255,255,255,0.2);
+	background-color: lightgrey;
 }
 
 input.usermanager_grouplist_text{
 	margin-bottom: -18px;
 }
 
+textarea.usermanager_grouplist_textarea {
+	background: transparent;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	padding: 2px;
+	color: lightgrey;
+	font-family: arial;
+	font-size: 15px;
+	width: 100%;
+	height: 5em;
+}
+
 tr.usermanager_grouplist_head p{
 	padding: 0px 10px 0px 10px;
-	color: lightgrey;
+	color: dimgrey;
+}
+
+tr.usermanager_grouplist_entry {
+	background: rgba(255,255,255,0.1);
 }
 
 tr.usermanager_grouplist_entry_hl {
-	background: rgba(255,255,255,0.1);
+	background: rgba(255,255,255,0.2);
 }
 
 tr.usermanager_grouplist_entry p{
 	padding: 0px 10px 0px 10px;
 	color: lightgrey;
+}
+
+p.usermanager_grouplist_description {
+	font-size: 15px;
 }
 
 input.usermanager_grouplist_button {
