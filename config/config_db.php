@@ -7,9 +7,9 @@
  */
 
 
-$config_db_server		= "kenakapheus.dyndns.org";
-$config_db_user			= "tech_invent";
-$config_db_password		= "t3c6inv3n7";
-$config_db_database		= "tech_invent";
+$config['db']['server']			= "server_URL";
+$config['db']['user']			= "database_username";
+$config['db']['password']		= "database_password";
+$config['db']['database']		= "database_name";
 
 ?>

@@ -15,6 +15,7 @@ $strings['login']['login']					= "Anmelden";
 $strings['login']['error']					= "Login fehlgeschlagen";
 $strings['login']['error_ban']				= "Du wurdest verbannt!";
 $strings['main']['backbutton']				= "Zurück";
-
+$strings['db']['no_conection']				= "Keine Verbindung zur Datenbank!";
+$strings['db']['no_database']				= "Datenbank existiert nicht!";
 
 ?>
