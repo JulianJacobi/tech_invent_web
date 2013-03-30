@@ -10,7 +10,7 @@
 	?>
 	<div id='username'><?php print($name); ?></div>
 </div>
-<div id="settings_menu">
+<div id="second_menu">
 	<?php 
 	if (isset($_GET['plugin'])) {
 		$plugin = $_GET['plugin'];
@@ -18,7 +18,7 @@
 		if (isset($submenu))
 			foreach ($submenu AS $name => $val) {
 				?>
-				<div class='settings_menu_item'>
+				<div class='secound_menu_item'>
 					<a href='./?plugin=<?php print($plugin); ?>&mode=<?php print($val); ?>'><?php print($name); ?></a>
 				</div>
 				<?php
