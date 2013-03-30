@@ -60,8 +60,12 @@ $strings['usermanager']['grouplist_description']			= "Beschreibung";
 $strings['usermanager']['grouplist_add']					= "Add";
 $strings['usermanager']['grouplist_edit']					= "Edit";
 $strings['usermanager']['grouplist_del']					= "Del";
+$strings['usermanager']['groupoverview']					= "Übersicht";
 
-$strings['usermanager']['groupoverview']					= "&Uuml;bersicht";
+//monogroup
+$strings['usermanager']['monogroup_headline']				= "Gruppeneinstellungen";
+$strings['usermanager']['monogroup_rights']					= "Rechte: ";
+$strings['usermanager']['monogroup_rightsok']				= "Speichern";
 
 
 ?>
