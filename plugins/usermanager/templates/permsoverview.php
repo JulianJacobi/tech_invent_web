@@ -4,6 +4,7 @@ global $strings, $get_string;
 <link href="plugins/usermanager/css/groupoverview.css" rel="stylesheet" type="text/css">
 <div id="usermanager_grouplist">
 	<p id="usermanager_grouplist_headline"><?php print($strings['usermanager']['grouplist_headline']); ?></p>
+	<div class="usermanager_groupoverview_table">
 	<table align="center">
 	<tr><td></td>
 	<?php
@@ -46,5 +47,6 @@ global $strings, $get_string;
 	}
 	?>
 	</table>	
+	</div>
 	<a href="<?php print($get_string); ?>"><button class="system_backbutton"><?php print($strings['main']['backbutton']); ?></button></a>
 </div>

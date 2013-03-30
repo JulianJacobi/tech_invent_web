@@ -1,6 +1,6 @@
 div#usermanager_grouplist {
 	background-color: #343434;
-	width: 25em;
+	width: 30em;
 	margin: 0px auto 0px auto;
 	padding: 10px 10px 20px 10px;
 	border-radius: 0px 0px 10px 10px;
@@ -67,4 +67,10 @@ tr.usermanager_groupoverview_entry p{
 
 input.usermanager_grouplist_button {
 	margin-bottom: -18px;
+}
+
+div.usermanager_groupoverview_table {
+	width: 30em;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }

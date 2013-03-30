@@ -1,0 +1,22 @@
+div#settings_menu {
+	height: 1.5em;
+	width: 100%;
+	background: lightgrey;
+	box-shadow: 0px 0px 3px black
+}
+
+div.settings_menu_item {
+	
+}
+
+div.settings_menu_item a{
+	padding: 0px 20px;
+	color: dimgrey;
+	text-decoration: none;
+	float: left;
+	margin-top: 2px;
+}
+
+div.settings_menu_item a:hover {
+	color: black;
+}

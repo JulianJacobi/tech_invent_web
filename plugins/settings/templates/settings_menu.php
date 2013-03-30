@@ -1,4 +1,4 @@
-<link href=""
+<link href="plugins/settings/css/settings_menu.css" rel="stylesheet" type="text/css">
 <div id='settings_menu'>
 	<?php
 	global $settings_menu, $get_string;

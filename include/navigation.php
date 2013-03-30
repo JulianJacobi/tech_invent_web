@@ -18,7 +18,7 @@
 		if (isset($submenu))
 			foreach ($submenu AS $name => $val) {
 				?>
-				<div class='secound_menu_item'>
+				<div class='second_menu_item'>
 					<a href='./?plugin=<?php print($plugin); ?>&mode=<?php print($val); ?>'><?php print($name); ?></a>
 				</div>
 				<?php
