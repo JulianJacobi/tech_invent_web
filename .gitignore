@@ -30,5 +30,3 @@ local.properties
 
 # Mac crap
 .DS_Store
-
-config/config_db.php
