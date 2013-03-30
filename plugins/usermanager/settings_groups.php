@@ -28,6 +28,11 @@ if(!isset($_POST['step'])) {
 	add_group($gname, $description);
 	global $strings;
 	include("plugins/usermanager/templates/grouplist.php");
+} elseif ($_POST['step'] == "del_groups") {
+	$gname = mysql_real_escape_string($_POST['gname']);
+	remove_group($gname);
+	global $strings;
+	include("plugins/usermanager/templates/grouplist.php");
 }
 
 ?>

@@ -16,5 +16,5 @@
 	?>
 		<input type="submit" value="<?php print($strings['usermanager']['monouser_rightsok']); ?>" class="system_button usermanager_monouser_button">
 	</form>
-	
+	<a href="./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung"><button class="system_backbutton"><?php print($strings['main']['backbutton']); ?></button></a>
 </div>
