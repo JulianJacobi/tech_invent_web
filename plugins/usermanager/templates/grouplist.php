@@ -57,7 +57,7 @@
 		$j++;
 	}
 	?>
-	<tr><td>
+	<tr><td colspan="5">
 		<form action="./?plugin=settings&mode=usermanager&modul=Rechtegruppen" method="post">
 			<input type="hidden" name="step" value="group_overview">
 			<input type="submit" value="<?php print($strings['usermanager']['groupoverview']); ?>" class="system_button">
