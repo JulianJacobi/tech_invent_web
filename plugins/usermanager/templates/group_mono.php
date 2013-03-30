@@ -11,7 +11,7 @@
 	$rights = get_permissions_for_group($_POST['gname']);
 	foreach($rights AS $name => $state) {
 		?>
-		<input type="checkbox" name="<?php $name ?>" <?php if($state == 1){print("checked");}?> class="usermanager_monogroup_checkbox">
+		<input type="checkbox" name="<?php print($name) ?>" <?php if($state == 1){print("checked");}?> class="usermanager_monogroup_checkbox">
 		<p class="usermanager_monogroup_checkboxlabel"><?php print($name) ?></p>
 		<?php
 	}

@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET['scan']) && $_GET['scan'] == "true") {
+if (isset($_GET['scan']) && $_GET['scan'] == "true" && has_permission("admin.scan.plugins")) {
     include("include/plugins/scan.php");
 }
 

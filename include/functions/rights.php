@@ -29,7 +29,7 @@ function add_permission_to_group($permissionname, $groupname) {
 	$row = mysql_fetch_assoc($result);
 	$permid = $row['permid'];
 	$groupid = $row['groupid'];
-	mysql_query("INSERT INTO `tech_invent`.`groupperms` (`id`, `group`, perm) VALUES (NULL, '" . $groupid . "', '" . $permid . "');");
+	mysql_query("INSERT INTO `tech_invent`.`groupperms` (`id`, `group`, perm) VALUES (NULL, " . $groupid . ", " . $permid . ");");
 }
 
 function remove_permission_from_group($permissionname, $groupname) {
@@ -138,11 +138,11 @@ function set_permissions_for_group($groupname, $new) {
 		if ($bool == $new[$name])
 			continue;
 		if ($bool == true && $new[$name] == false) {
-			remove_permission_from_group($groupname, $name);
-			//echo "del:" . $username . ":" . $name . ";<br>";
+			remove_permission_from_group($name, $groupname);
+//			echo "del:" . $groupname . ":" . $name . ";<br>";
 		} else {
-			add_permission_to_group($groupname, $name);
-			//echo "add:" . $username . ":" . $name . ";<br>";
+			add_permission_to_group($name, $groupname);
+//			echo "add:" . $groupname . ":" . $name . ";<br>";
 		}
 	}
 }

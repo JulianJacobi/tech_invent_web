@@ -10,6 +10,8 @@
 
 global $strings;
 
+$strings['usermanager']['menu_name']				= "Benutzerverwaltung";
+
 $strings['usermanager']['user_settings_headline']			= "Benutzereinstellungen ändern";
 $strings['usermanager']['user_settings_username']			= "Benutzername:";
 $strings['usermanager']['user_settings_old_passwd']			= "Passwort:";

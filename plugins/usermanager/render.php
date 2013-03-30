@@ -7,7 +7,6 @@
  * @version 2013-03-29
  */
 
-include("plugins/usermanager/strings.php");
 //Globals
 global $settings_new_username;
 $settings_new_username = $_SESSION["username"];

@@ -1,13 +1,11 @@
 <?php
-global $settings_menu;
-global $settings_modules;
-if(!isset($_GET["modul"])) {
-$_GET["modul"] = "Haupteinstellungen";
+
+if(isset($_GET['mode'])) {
+	include("plugins/settings/templates/settings_menu.php");
+	if (isset($_GET['part'])) {
+//		$helper_path = $settings_modules[$_GET['mode']][$_GET['modul']];
+		include("plugins/" . $_GET['mode'] . "/settings.php");
+	}
 }
-include("plugins/settings/templates/settings_menu.php");
-include("plugins/settings/show.php");
 
-
-
-render_settings();
 ?>

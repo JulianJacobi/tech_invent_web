@@ -1,5 +1,8 @@
 <?php
 session_start();
+$get_string = "./?";
+foreach ($_GET AS $name => $val)
+	$get_string = $get_string . $name . "=" . $val . "&";
 /*
  * Index File for TechInvent
  *

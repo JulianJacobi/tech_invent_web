@@ -1,23 +1,28 @@
-<?php
-/*
- * Menu Construktor for TechInvent
- *
- * @author Lukas Klingberg
- * @version 2013-03-28
- */
 
-echo "<div id='menu'>";
-
-foreach ($nav_menu AS $plugin => $plugin_menu) {
-    echo "<div class='menu_plugin'>";
-    foreach ($plugin_menu AS $name => $get_val) {
-        echo "<div class='menu_item'><a href='./?plugin=$plugin&mode=$get_val'>$name</a></div>";
-    }
-    echo "</div>";
-}
-$name = $_SESSION['username'];
-echo "<div id='username'>$name</div>";
-
-echo "</div>";
-
-?>
+<div id='menu'>
+	<?php
+	foreach ($nav_menu AS $plugin => $plugin_menu) {
+		?>
+	    <div class='menu_item'><a href='./?plugin=<?php print($plugin); ?>'><?php print($plugin_menu); ?></a></div>
+	    <?php
+	}
+	$name = $_SESSION['username'];
+	?>
+	<div id='username'><?php print($name); ?></div>
+</div>
+<div id="settings_menu">
+	<?php 
+	if (isset($_GET['plugin'])) {
+		$plugin = $_GET['plugin'];
+		$submenu = $nav_submenu[$plugin];
+		if (isset($submenu))
+			foreach ($submenu AS $name => $val) {
+				?>
+				<div class='settings_menu_item'>
+					<a href='./?plugin=<?php print($plugin); ?>&mode=<?php print($val); ?>'><?php print($name); ?></a>
+				</div>
+				<?php
+			}
+	}
+	?>
+</div>
