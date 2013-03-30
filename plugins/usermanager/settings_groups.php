@@ -19,6 +19,9 @@ if(!isset($_POST['step'])) {
 	}
 	global $strings;
 	include("plugins/usermanager/templates/group_mono.php");
+} elseif ($_POST['step'] == "group_overview") {
+	global $strings;
+	include("plugins/usermanager/templates/groupoverview.php");
 }
 
 ?>

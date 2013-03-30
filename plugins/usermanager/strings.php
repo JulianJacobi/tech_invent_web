@@ -16,7 +16,7 @@ $strings['usermanager']['user_settings_old_passwd']			= "Passwort:";
 $strings['usermanager']['user_settings_new_passwd']			= "Neues Passwort:";
 $strings['usermanager']['user_settings_repeat_passwd']		= "Wiederholung:";
 
-$strings['usermanager']['user_settings_error1']				= "Passwörter stimmen nicht überein!";
+$strings['usermanager']['user_settings_error1']				= "Passw&ouml;rter stimmen nicht &uuml;berein!";
 $strings['usermanager']['user_settings_error2']				= "Passwort falsch!";
 $strings['usermanager']['user_settings_error3']				= "erfolgreich!";
 $strings['usermanager']['user_settings_error4']				= "Beutzername existiert schon!";
@@ -36,15 +36,15 @@ $strings['usermanager']['newuser_headline']					= "Neuer Benutzer";
 $strings['usermanager']['newuser_username']					= "Benutzername:";
 $strings['usermanager']['newuser_passwd']					= "Passwort:";
 $strings['usermanager']['newuser_repeat_passwd']			= "Wiederholung:";
-$strings['usermanager']['newuser_add']						= "Hinzufügen";
-$strings['usermanager']['newuser_error1']					= "Benutzername ungültig!";
-$strings['usermanager']['newuser_error2']					= "Passwort ungültig!";
-$strings['usermanager']['newuser_error3']					= "Passwörter stimmen nicht überein!";
+$strings['usermanager']['newuser_add']						= "Hinzuf&uuml;gen";
+$strings['usermanager']['newuser_error1']					= "Benutzername ung&uuml;ltig!";
+$strings['usermanager']['newuser_error2']					= "Passwort ung&uuml;ltig!";
+$strings['usermanager']['newuser_error3']					= "Passw&ouml;rter stimmen nicht &uuml;berein!";
 
 //deluser
-$strings['usermanager']['deluser_headline']					= "Benutzer löschen";
+$strings['usermanager']['deluser_headline']					= "Benutzer l&ouml;schen";
 $strings['usermanager']['deluser_question1']				= "Bist du sicher, dass du den Benutzer ";
-$strings['usermanager']['deluser_question2']				= " unwiederuflich löschen möchtest?";
+$strings['usermanager']['deluser_question2']				= " unwiederuflich l&ouml;schen m&ouml;chtest?";
 $strings['usermanager']['deluser_ok']						= "OK";
 $strings['usermanager']['deluser_abbr']						= "Abbrechen";
 
@@ -60,6 +60,8 @@ $strings['usermanager']['grouplist_description']			= "Beschreibung";
 $strings['usermanager']['grouplist_add']					= "Add";
 $strings['usermanager']['grouplist_edit']					= "Edit";
 $strings['usermanager']['grouplist_del']					= "Del";
+
+$strings['usermanager']['groupoverview']					= "&Uuml;bersicht";
 
 
 ?>
