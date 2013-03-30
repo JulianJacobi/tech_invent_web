@@ -1,4 +1,4 @@
-<link href="plugins/usermanager/css/mono_group.css" rel="stylesheet" type="text/css">
+<link href="plugins/usermanager/css/group_mono.css" rel="stylesheet" type="text/css">
 <div id="usermanager_monogroup">
 	<p id="usermanager_monogroup_headline"><?php print($strings['usermanager']['monogroup_headline']." (".$_POST['gname'].")") ?></p>
 	
