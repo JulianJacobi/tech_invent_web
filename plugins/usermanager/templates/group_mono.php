@@ -16,6 +16,7 @@
 		<?php
 	}
 	?>
-	<input type="submit" value="<?php print($strings['usermanager']['monogroup_rightsok']); ?>">
+	<input type="submit" value="<?php print($strings['usermanager']['monogroup_rightsok']); ?>" class="system_button">
 	</form>
+	<a href="./?plugin=settings&mode=usermanager&modul=Rechtegruppen"><button class="system_backbutton"><?php print($strings['main']['backbutton']); ?></button></a>
 </div>

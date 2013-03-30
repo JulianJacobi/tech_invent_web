@@ -29,3 +29,16 @@ input.system_input_text {
 	cursor: pointer;
 	text-decoration: none;
 }
+
+.system_backbutton {
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid lightgrey;
+	color: lightgrey;
+	background: transparent;
+	cursor: pointer;
+	width: 6em;
+	position: relative;
+	left: 100%;
+	margin-left: -6em;
+}
