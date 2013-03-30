@@ -22,6 +22,12 @@ if(!isset($_POST['step'])) {
 } elseif ($_POST['step'] == "group_overview") {
 	global $strings;
 	include("plugins/usermanager/templates/groupoverview.php");
+}  elseif ($_POST['step'] == "new_groups") {
+	$gname = $_POST['gname'];
+	$description = $_POST['gdescription'];
+	add_group($gname, $description);
+	global $strings;
+	include("plugins/usermanager/templates/grouplist.php");
 }
 
 ?>
