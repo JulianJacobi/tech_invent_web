@@ -21,20 +21,25 @@ table#usermanager_userlist td{
 }
 
 tr.usermanager_userlist_head {
-	background: rgba(255,255,255,0.2);
+	background: lightgrey;
 	border: none;
 }
 
 p.usermanager_userlist_head {
 	padding: 0px 10px;
+	color: dimgrey;
 }
 
 p.usermanager_userlist_entry {
 	padding: 0px 10px;
 }
 
-tr.usermanager_userlist_entry_hl {
+tr.usermanager_userlist_entry {
 	background-color: rgba(255,255,255,0.1);
+}
+
+tr.usermanager_userlist_entry_hl {
+	background-color: rgba(255,255,255,0.2);
 }
 input.usermanager_userlist_editbutton {
 	margin-bottom: -18px;

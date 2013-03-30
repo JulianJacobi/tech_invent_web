@@ -9,11 +9,12 @@
 		</td><td>
 			<p class="usermanager_userlist_head"><?php print($strings['usermanager']['userlist_head_pass']); ?></p>
 		</td></tr>
-		<tr><td></td><td></td><td></td><td>
+		<tr class="usermanager_userlist_entry"><td></td><td></td><td></td><td>
 			<form action="./?plugin=settings&mode=usermanager&modul=Benutzerverwaltung" method="post">
 				<input type="hidden" name="step" value="add_user">
 				<input type="submit" value="<?php print($strings['usermanager']['userlist_add']) ?>" class="system_button usermanager_userlist_editbutton">
 			</form>
+		</td><td>
 		</td></tr>
 	<?php $j = 0; ?>
 	<?php foreach ($users AS $i){ ?>
