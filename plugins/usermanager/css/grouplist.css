@@ -23,6 +23,7 @@ input.usermanager_grouplist_text{
 
 tr.usermanager_grouplist_head p{
 	padding: 0px 10px 0px 10px;
+	color: lightgrey;
 }
 
 tr.usermanager_grouplist_entry_hl {
@@ -31,6 +32,7 @@ tr.usermanager_grouplist_entry_hl {
 
 tr.usermanager_grouplist_entry p{
 	padding: 0px 10px 0px 10px;
+	color: lightgrey;
 }
 
 input.usermanager_grouplist_button {
