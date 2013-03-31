@@ -1,5 +1,14 @@
 div.events_calendar_year {
 	width: 50em;
+	padding-bottom: 50px;
+}
+
+div.events_calendar_year_navigation {
+	text-align: center;
+}
+
+div.events_calendar_year_navigation button{
+	margin: 0px 5em;
 }
 
 table.events_calendar_year_yeartable {
@@ -7,5 +16,33 @@ table.events_calendar_year_yeartable {
 }
 
 table.events_calendar_year_monthtable {
-	
+	color: lightgrey;
+	border-collapse: collapse;
+	margin: 10px;
+}
+
+table.events_calendar_year_monthtable td{
+	text-align: center;
+}
+
+tr.events_calendar_year_monthtable_head td{
+	background: lightgrey;
+	color: dimgrey;
+}
+
+td.events_calendar_year_monthtable_othermonth {
+	color: rgba(255,255,255,0.15);
+	padding: 3px;
+}
+
+td.events_calendar_year_monthtable_thismonth {
+	padding: 3px;
+}
+
+tr.events_calendar_year_monthtable_hl1 {
+	background: rgba(255,255,255,0.2);
+}
+
+tr.events_calendar_year_monthtable_hl2 {
+	background: rgba(255,255,255,0.1);
 }

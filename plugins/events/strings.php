@@ -8,6 +8,10 @@ $strings['events']['sub_menu_calendar'] 		= "Kalender";
 //callendar year_view
 $strings['events']['calendar_year_headline']	= "Kanlender";
 
+$strings['events']['calendar_year_pre']			= "Vorheriges Jahr";
+$strings['events']['calendar_year_this']		= "Aktuelles Jahr";
+$strings['events']['calendar_year_next']		= "Nächstes Jahr";
+
 $strings['events']['calender_year_month_1']		= "Januar";
 $strings['events']['calender_year_month_2']		= "Februar";
 $strings['events']['calender_year_month_3']		= "März";
