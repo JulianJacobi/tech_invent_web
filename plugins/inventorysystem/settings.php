@@ -14,7 +14,6 @@ if(isset($_GET['mode']) && $_GET['part'] == "list"){
 			$inventorys[$_POST['iname']] = $inv;
 			$inventorys[$_POST['iname_old']] == null;
 			$inv = $inventorys;
-			echo "<meta http-equiv='refresh' content='0; URL=$get_string'>";
 		}
 		//InventoryEdit $_POSTs: iname & idescription
 		include("plugins/inventorysystem/templates/InventoryEdit.php");

@@ -14,3 +14,13 @@ p.inventorysystem_inventorylist_edit_label {
 form.inventorysystem_inventorylist_edit input {
 	width: 20em;
 }
+
+form.inventorysystem_inventorylist_edit textarea {
+	width: 20em;
+	height: 5em;
+	font-size: 15px;
+}
+
+input.inventorysystem_inventorylist_edit_button {
+	margin-top: 20px;
+}

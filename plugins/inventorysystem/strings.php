@@ -21,5 +21,7 @@ $strings['inventorysystem']['inventorylist_delete_abr']			= "Abbrechen";
 //edit template
 $strings['inventorysystem']['inventorylist_edit_headline']		= "Inventar bearbeiten";
 $strings['inventorysystem']['inventorylist_edit_name']			= "Inventarname:";
+$strings['inventorysystem']['inventorylist_edit_description']	= "Beschreibung:";
+$strings['inventorysystem']['inventorylist_edit_save']			= "Speichern";
 
 ?>
