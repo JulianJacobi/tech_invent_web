@@ -1,3 +1,7 @@
 div.events_calendar_year {
 	width: 50em;
 }
+
+table.events_calendar_year_yeartable {
+	text-align: center;
+}
