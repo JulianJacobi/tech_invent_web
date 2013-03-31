@@ -18,8 +18,6 @@ class Inventory
 		if ($file == false) {
 			$new = new Inventory();
 			$new->name = $name;
-			if (mysql_num_rows(mysql_query("SELECT id FROM inventorys WHERE name = '" . $name . "';")) < 1)
-				mysql_query("INSERT INTO inventorys (id, name) VALUES (NULL , '" . $name . "');");
 			$new->writeToFile();
 			return $new;
 		}
@@ -29,6 +27,8 @@ class Inventory
 	}
 	
 	public  function writeToFile() {
+		if (mysql_num_rows(mysql_query("SELECT id FROM inventorys WHERE name = '" . $name . "';")) < 1)
+			mysql_query("INSERT INTO inventorys (id, name) VALUES (NULL , '" . $name . "');");
 		$filename = "plugins/inventorysystem/inventorys/" . $this->name . ".inventory";
 		$file = fopen($filename, "w");
 		$str = serialize($this);

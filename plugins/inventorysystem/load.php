@@ -1,7 +1,12 @@
 <?php
 
 include ('plugins/inventorysystem/strings.php');
-include ('plugins/inventorysystem/api.php');
+include 'plugins/inventorysystem/Inventory.php';
+
+$res = mysql_query("SELECT * FROM inventorys");
+while ($row = mysql_fetch_object($res)) {
+	$inventorys[$row->name] = Inventory::readFromFileOrCreate($row->name);
+}
 
 $menu->addMenuItem("inventorysystem", $strings['menu']['pluginname']);
 
