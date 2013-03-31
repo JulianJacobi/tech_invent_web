@@ -2,27 +2,41 @@
 
 class Inventory
 {
-	protected $id = 0;
+	public $id = 0;
 	public $name = "";
 	public $description = "";
 	
-	protected $items = array();
-	public $item_count = 0;
+	public $items = array();
 	
-	public function readFromFile($name) {
+	public function item_count() {
+		count($this->items);
+	}
+	
+	public static function readFromFileOrCreate($name) {
 		$filename = "plugins/inventorysystem/inventorys/" . $name . ".inventory";
-		$file = fopen($filename, "r");
+		$file = @fopen($filename, "r");
+		if ($file == false) {
+			$new = new Inventory();
+			$new->name = $name;
+			mysql_query("INSERT INTO inventorys (id, name) VALUES (NULL , '" . $name . "');");
+			return $new;
+		}
 		$str = fread($file, filesize($filename));
-		$this = unserialize($str);
+		fclose($file);
+		return unserialize($str);
+	}
+	
+	public  function writeToFile() {
+		$filename = "plugins/inventorysystem/inventorys/" . $this->name . ".inventory";
+		$file = fopen($filename, "w");
+		$str = serialize($this);
+		fwrite($file, $str);
 		fclose($file);
 	}
 	
-	public  function writeToFile($name) {
-		$filename = "plugins/inventorysystem/inventorys/" . $name . ".inventory";
-		$file = fopen($filename, "W");
-		$str = serialize($this);
-		fputs($file, $str);
-		fclose($file);
+	public function delete() {
+		mysql_query("DELETE FROM `tech_invent`.`inventorys` WHERE `inventorys`.`name` = '" . $this->name . "');");
+		unlink($this->name);
 	}
 }
 
