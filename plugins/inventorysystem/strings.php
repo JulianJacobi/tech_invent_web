@@ -1,6 +1,8 @@
 <?php
 
-$strings['menu']['pluginname'] 			= "Inventar";
-$strings['menu']['inventorylist'] 		= "Inventarliste";
+$strings['menu']['pluginname'] 						= "Inventar";
+$strings['menu']['inventorylist'] 					= "Inventarliste";
+
+$strings['inventorysystem']['inventorylist']		= "Inventarliste";
 
 ?>

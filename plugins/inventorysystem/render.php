@@ -1,8 +1,8 @@
 <?php
+if(isset($_GET['mode']) && $_GET['mode'] == "list"){
 
-$result = mysql_query("SELECT * FROM inventory");
-while ($row = mysql_fetch_assoc($result)) {
-	echo $row['id'] . "," . $row['serial'] . "," . $row['name'] . "," . $row['description'];
+	global $strings;
+	include("plugins/inventorysystem/templates/InventoryList.php");
 }
 
 ?>
