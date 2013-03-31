@@ -13,6 +13,8 @@ if(isset($_GET['mode']) && $_GET['part'] == "list"){
 			$inv->writeToFile();
 			$inventorys[$_POST['iname']] = $inv;
 			$inventorys[$_POST['iname_old']] == null;
+			$inv = $inventorys;
+			echo "<meta http-equiv='refresh' content='0; URL=$get_string'>";
 		}
 		//InventoryEdit $_POSTs: iname & idescription
 		include("plugins/inventorysystem/templates/InventoryEdit.php");
@@ -22,19 +24,16 @@ if(isset($_GET['mode']) && $_GET['part'] == "list"){
 		$inv->description = $_POST['idescription'];
 		$inv->writeToFile();
 		$inventorys[$_POST['iname']] = $inv;
+		echo "<meta http-equiv='refresh' content='0; URL=$get_string'>";
 		//AddInventory $_POSTs: idescription & iname
 	} elseif (isset($_POST['step']) && $_POST['step'] == "del_inventory") {
 		//DelInventory $_POSTs: none
 		if (isset($_POST['del_inventory']) && $_POST['del_inventory'] == 'true') {
 			$inv = $inventorys[$_POST['iname']];
 			$inv->delete();
-			$inventorys[$_POST['iname']] == null;
-			$res = mysql_query("SELECT * FROM inventorys");
-			while ($row = mysql_fetch_object($res)) {
-				$inventorys[$row->name] = Inventory::readFromFileOrCreate($row->name);
-			}
 			$inv = $inventorys;
-			include("plugins/inventorysystem/templates/InventoryList.php");
+			global $get_string;
+			echo "<meta http-equiv='refresh' content='0; URL=$get_string'>";
 		} else {
 			include("plugins/inventorysystem/templates/InventoryDelete.php");
 		}
