@@ -1,9 +1,9 @@
 <link href="plugins/events/css/calendar_year.css" rel="stylesheet" type="text/css">
 <div class="templates_container events_calendar_year">
-	<p class="templates_headline events_calendar_year_headline"><?php print($strings['events']['calendar_year_headline']." (".date(Y, time()).")"); ?></p>
-	<table class="events_calendar_year_yeartable">
+	<p class="templates_headline events_calendar_year_headline"><?php print($strings['events']['calendar_year_headline']." (".date("Y", time()).")"); ?></p>
+	<table class="events_calendar_year_yeartable" align="center">
 		<?php
-		$year = date(Y, time());
+		$year = date("Y", time());
 		for($month = 1; $month <= 12; $month++) {
 			if ($month == 1 || $month == 5 || $month == 9) {
 				print("<tr><td>");
@@ -41,10 +41,10 @@
 			</tr>
 			<?php
 			$zeit = strtotime($year."-".$month."-1");
-			$monthstart = date(N, $zeit);
-			$daysofmonth = date(t, $zeit);
+			$monthstart = date("N", $zeit);
+			$daysofmonth = date("t", $zeit);
 			$zeit_before = strtotime($year."-".($month-1)."-1");
-			$daysofmonthbefore = date(t, $zeit_before);
+			$daysofmonthbefore = date("t", $zeit_before);
 			for ($i = 1; $i <= 6; $i++) {
 				for ($weekday = 1; $weekday <= 7; $weekday++) {
 					if ($weekday == 1) {
