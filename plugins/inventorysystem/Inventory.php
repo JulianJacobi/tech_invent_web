@@ -9,14 +9,20 @@ class Inventory
 	protected $items = array();
 	public $item_count = 0;
 	
-	function __construct($name) {
-		$this->name = $name;
-		$result = mysql_query("SELECT * FROM inventorys WHERE name = '" . $name . "';");
-		if (mysql_num_rows($result) > 0) {
-			$row = mysql_fetch_object($result);
-			$this->description = $row->description;
-			$this->id = $row->id;
-		}
+	public function readFromFile($name) {
+		$filename = "plugins/inventorysystem/inventorys/" . $name . ".inventory";
+		$file = fopen($filename, "r");
+		$str = fread($file, filesize($filename));
+		$this = unserialize($str);
+		fclose($file);
+	}
+	
+	public  function writeToFile($name) {
+		$filename = "plugins/inventorysystem/inventorys/" . $name . ".inventory";
+		$file = fopen($filename, "W");
+		$str = serialize($this);
+		fputs($file, $str);
+		fclose($file);
 	}
 }
 
