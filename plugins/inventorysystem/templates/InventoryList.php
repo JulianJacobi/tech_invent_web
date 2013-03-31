@@ -9,23 +9,49 @@
 	</td><td>
 		<p><?php print($strings['inventorysystem']['inventorylist_description']); ?></p>
 	</td></tr>
-	<form action=""
-	<tr class="inventorysystem_inventorylist_add"><td>
-		
+	<form action="./?plugin=settings&mode=inventorysystem&part=list" method="post">
+		<input type="hidden" name="step" value="add_inventory">
+	<tr class="inventorysystem_inventorylist_add"><td class="inventorysystem_inventorylist_entry_name">
+		<input type="text" name="iname" class="system_input_text">
 	</td><td></td><td>
-	
+		<textarea class="inventorysystem_inventorylist_add_textarea system_input_text" name="idescription"></textarea>
 	</td><td>
-	
+		<input type="submit" value="<?php print($strings['inventorysystem']['inventorylist_add']); ?>" class="system_button">
 	</td><td></td></tr>
+	</form>
 	<?php
+		$style = 0;
 		foreach ($inv AS $name => $inventory) {
-			print('<tr class="inventorysystem_inventorylist_entry"><td class="inventorysystem_inventorylist_entry_name">');
+			if ($style % 2 == 1) {
+				$class = " inventorysystem_inventorylist_entry_hl1";
+			} else {
+				$class = " inventorysystem_inventorylist_entry_hl2";
+			}
+			print('<tr class="inventorysystem_inventorylist_entry'.$class.'"><td class="inventorysystem_inventorylist_entry_name">');
 			print("$inventory->name");
 			print('</td><td class="inventorysystem_inventorylist_entry_count">');
 			print("$inventory->item_count");
 			print('</td><td class="inventorysystem_inventorylist_entry_description">');
 			print("$inventory->description");
+			print('</td><td>');
+			?>
+			<form action="./?plugin=settings&mode=inventorysystem&part=list" method="post">
+				<input type="hidden" name="step" value="edit_inventory">
+				<input type="hidden" name="iname" value="<?php print("$inventory->name"); ?>">
+				<input type="submit" value="<?php print($strings['inventorysystem']['inventorylist_edit']); ?>" class="system_button inventorysystem_inventorylist_button">
+			</form>
+			<?php
+			print('</td><td>');
+			?>
+			<form action="./?plugin=settings&mode=inventorysystem&part=list" method="post">
+				<input type="hidden" name="step" value="del_inventory">
+				<input type="hidden" name="iname" value="<?php print("$inventory->name"); ?>">
+				<input type="submit" value="<?php print($strings['inventorysystem']['inventorylist_delete']); ?>" class="system_button inventorysystem_inventorylist_button">
+			</form>
+			<?php
 			print('</td></tr>');
+			
+			$style++;
 		}
 	?>
 	</table>

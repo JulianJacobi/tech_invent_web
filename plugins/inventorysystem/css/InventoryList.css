@@ -12,11 +12,24 @@ tr.inventorysystem_inventorylist_head {
 }
 
 tr.inventorysystem_inventorylist_add {
-	
+	background: rgba(255,255,255,0.1)
+}
+
+textarea.inventorysystem_inventorylist_add_textarea {
+	width: 100%;
+	font-size: 15px;
 }
 
 tr.inventorysystem_inventorylist_entry {
 	
+}
+
+tr.inventorysystem_inventorylist_entry_hl1 {
+	background: rgba(255,255,255,0.1);
+}
+
+tr.inventorysystem_inventorylist_entry_hl2 {
+	background: rgba(255,255,255,0.2);
 }
 
 td.inventorysystem_inventorylist_entry_name {
@@ -30,4 +43,8 @@ td.inventorysystem_inventorylist_entry_count {
 
 td.inventorysystem_inventorylist_entry_description {
 	min-width: 10em;
+}
+
+input.inventorysystem_inventorylist_button {
+	margin-bottom: -16px;
 }

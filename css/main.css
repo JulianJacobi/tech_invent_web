@@ -10,7 +10,7 @@ body {
 	font-family: arial;
 }
 
-input.system_input_text {
+.system_input_text {
 	font-family: arial;
 	background: transparent;
 	border: 1px solid lightgrey;
