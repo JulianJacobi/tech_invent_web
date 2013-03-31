@@ -39,6 +39,7 @@
 			<form action="<?php print($get_string); ?>" method="post">
 				<input type="hidden" name="step" value="edit_inventory">
 				<input type="hidden" name="iname" value="<?php print("$inventory->name"); ?>">
+				<input type="hidden" name="iname_old" value="<?php print("$inventory->name"); ?>">
 				<input type="submit" value="<?php print($strings['inventorysystem']['inventorylist_edit']); ?>" class="system_button inventorysystem_inventorylist_button">
 			</form>
 			<?php
