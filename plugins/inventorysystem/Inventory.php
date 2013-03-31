@@ -38,7 +38,7 @@ class Inventory
 	
 	public function delete() {
 		mysql_query("DELETE FROM `tech_invent`.`inventorys` WHERE `inventorys`.`name` = '" . $this->name . "');");
-		unlink($this->name);
+		unlink("plugins/inventorysystem/inventorys/" . $this->name . ".inventory");
 	}
 }
 

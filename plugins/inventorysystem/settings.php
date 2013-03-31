@@ -23,7 +23,7 @@ if(isset($_GET['mode']) && $_GET['part'] == "list"){
 		//AddInventory $_POSTs: idescription & iname
 	} elseif (isset($_POST['step']) && $_POST['step'] == "del_inventory") {
 		//DelInventory $_POSTs: none
-		if (isset($_POST['del_inventory']) && $_POST['del_inventory'] == "true") {
+		if (isset($_POST['del_inventory']) && $_POST['del_inventory'] == true) {
 			$inv = $inventorys[$_POST['iname']];
 			$inv->delete();
 			$inventorys[$_POST['iname']] == null;
