@@ -1,3 +1,33 @@
 div.inventorysystem_inventorylist {
-	width: 30em;
+	width: 40em;
+}
+
+table.inventorysystem_inventorylist {
+	color: lightgrey;
+}
+
+tr.inventorysystem_inventorylist_head {
+	background: lightgrey;
+	color: dimgrey;
+}
+
+tr.inventorysystem_inventorylist_add {
+	
+}
+
+tr.inventorysystem_inventorylist_entry {
+	
+}
+
+td.inventorysystem_inventorylist_entry_name {
+	vertical-align: top;
+}
+
+td.inventorysystem_inventorylist_entry_count {
+	text-align: center;
+	vertical-align: top;
+}
+
+td.inventorysystem_inventorylist_entry_description {
+	min-width: 10em;
 }
