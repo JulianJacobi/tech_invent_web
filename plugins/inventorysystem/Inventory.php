@@ -18,7 +18,8 @@ class Inventory
 		if ($file == false) {
 			$new = new Inventory();
 			$new->name = $name;
-			mysql_query("INSERT INTO inventorys (id, name) VALUES (NULL , '" . $name . "');");
+			if (mysql_num_rows(mysql_query("SELECT id FROM inventorys WHERE name = '" . $name . "';")) < 1)
+				mysql_query("INSERT INTO inventorys (id, name) VALUES (NULL , '" . $name . "');");
 			return $new;
 		}
 		$str = fread($file, filesize($filename));
