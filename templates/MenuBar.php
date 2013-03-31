@@ -1,7 +1,7 @@
-
 <div id='menu'>
 	<?php
-	foreach ($nav_menu AS $plugin => $plugin_menu) {
+	$menu = $this->menu_items;
+	foreach ($menu AS $plugin => $plugin_menu) {
 		?>
 	    <div class='menu_item'><a href='./?plugin=<?php print($plugin); ?>'><?php print($plugin_menu); ?></a></div>
 	    <?php
@@ -14,7 +14,7 @@
 	<?php 
 	if (isset($_GET['plugin'])) {
 		$plugin = $_GET['plugin'];
-		$submenu = $nav_submenu[$plugin];
+		$submenu = $this->submenu_items[$plugin];
 		if (isset($submenu))
 			foreach ($submenu AS $name => $val) {
 				?>

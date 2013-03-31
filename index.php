@@ -1,32 +1,35 @@
 <?php
-session_start();
+session_start();												// PHP/Login Session
+
+global $get_string; 											// Regenerate current GET string
 $get_string = "./?";
 foreach ($_GET AS $name => $val)
 	$get_string = $get_string . $name . "=" . $val . "&";
-include("include/connect.php"); // database connection
-/*
- * Index File for TechInvent
- *
- * @author Julian jacobi
- * @version 2013-03-29
- */
 
-//Basic Functions
-include("include/functions/include.php");
-include("include/strings.php");
-include("include/plugins/include.php");
+function __autoload($class_name) { 								// Autoload Classes
+    include "include/classes/" . $class_name . ".php";
+}
 
-//HTML Header
-include("templates/html_head.php");
+include("include/connect.php"); 								// Database connection
 
-//Login Scripts
-require_once("include/auth.php");
+include("include/functions/include.php");						// Basic Functions
 
-//Navigationbar
-include("include/navigation.php");
-render_plugin();
+include("include/strings.php");									// Locationfile
 
-//HTML Footer
-include("templates/html_footer.php");
+include("templates/Header.php");								// HTML head
+
+require_once("include/Login.php");								// Login
+
+$menu = new Menu();												// Menubar
+
+include("include/plugins/include.php");							// Load/Init all Plugins
+
+$menu->addMenuItem("logout", $strings['main']['logout']);		// Logout Button
+
+$menu->render();												// render Menubar
+
+render_plugin();												// Include currents Plugin render.php
+
+include("templates/Footer.php");								// HTML foot
 
 ?>
