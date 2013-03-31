@@ -20,6 +20,7 @@ class Inventory
 			$new->name = $name;
 			if (mysql_num_rows(mysql_query("SELECT id FROM inventorys WHERE name = '" . $name . "';")) < 1)
 				mysql_query("INSERT INTO inventorys (id, name) VALUES (NULL , '" . $name . "');");
+			$new->writeToFile();
 			return $new;
 		}
 		$str = fread($file, filesize($filename));

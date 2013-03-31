@@ -30,3 +30,5 @@ local.properties
 
 # Mac crap
 .DS_Store
+
+plugins/inventorysystem/inventorys/
