@@ -9,12 +9,10 @@
 	</td><td>
 		<p><?php print($strings['inventorysystem']['inventorylist_description']); ?></p>
 	</td></tr>
-	
+	<form action=""
 	<tr class="inventorysystem_inventorylist_add"><td>
-	
-	</td><td>
-	
-	</td><td>
+		
+	</td><td></td><td>
 	
 	</td><td>
 	
