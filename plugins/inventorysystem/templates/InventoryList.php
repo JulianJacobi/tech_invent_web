@@ -1,4 +1,5 @@
 <link href="plugins/inventorysystem/css/InventoryList.css" rel="stylesheet" type="text/css">
+<?php global $strings, $get_string; ?>
 <div class="templates_container inventorysystem_inventorylist">
 	<p class="templates_headline"><?php print($strings['inventorysystem']['inventorylist']); ?></p>
 	<table class="inventorysystem_inventorylist" align="center">
@@ -9,7 +10,7 @@
 	</td><td>
 		<p><?php print($strings['inventorysystem']['inventorylist_description']); ?></p>
 	</td></tr>
-	<form action="./?plugin=settings&mode=inventorysystem&part=list" method="post">
+	<form action="<?php print($get_string); ?>" method="post">
 		<input type="hidden" name="step" value="add_inventory">
 	<tr class="inventorysystem_inventorylist_add"><td class="inventorysystem_inventorylist_entry_name">
 		<input type="text" name="iname" class="system_input_text">
@@ -35,7 +36,7 @@
 			print("$inventory->description");
 			print('</td><td>');
 			?>
-			<form action="./?plugin=settings&mode=inventorysystem&part=list" method="post">
+			<form action="<?php print($get_string); ?>" method="post">
 				<input type="hidden" name="step" value="edit_inventory">
 				<input type="hidden" name="iname" value="<?php print("$inventory->name"); ?>">
 				<input type="submit" value="<?php print($strings['inventorysystem']['inventorylist_edit']); ?>" class="system_button inventorysystem_inventorylist_button">
@@ -43,7 +44,7 @@
 			<?php
 			print('</td><td>');
 			?>
-			<form action="./?plugin=settings&mode=inventorysystem&part=list" method="post">
+			<form action="<?php print($get_string); ?>" method="post">
 				<input type="hidden" name="step" value="del_inventory">
 				<input type="hidden" name="iname" value="<?php print("$inventory->name"); ?>">
 				<input type="submit" value="<?php print($strings['inventorysystem']['inventorylist_delete']); ?>" class="system_button inventorysystem_inventorylist_button">
