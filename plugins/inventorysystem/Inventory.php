@@ -27,8 +27,8 @@ class Inventory
 	}
 	
 	public  function writeToFile() {
-		if (mysql_num_rows(mysql_query("SELECT id FROM inventorys WHERE name = '" . $name . "';")) < 1)
-			mysql_query("INSERT INTO inventorys (id, name) VALUES (NULL , '" . $name . "');");
+		if (mysql_num_rows(mysql_query("SELECT id FROM inventorys WHERE name = '" . $this->name . "';")) < 1)
+			mysql_query("INSERT INTO inventorys (id, name) VALUES (NULL , '" . $this->name . "');");
 		$filename = "plugins/inventorysystem/inventorys/" . $this->name . ".inventory";
 		$file = fopen($filename, "w");
 		$str = serialize($this);
@@ -37,7 +37,7 @@ class Inventory
 	}
 	
 	public function delete() {
-		mysql_query("DELETE FROM `tech_invent`.`inventorys` WHERE `inventorys`.`name` = '" . $this->name . "');");
+		mysql_query("DELETE FROM `tech_invent`.`inventorys` WHERE `inventorys`.`name` = '" . $this->name . "';");
 		unlink("plugins/inventorysystem/inventorys/" . $this->name . ".inventory");
 	}
 }
