@@ -1,9 +1,10 @@
 <?php
 
 include ('plugins/inventorysystem/strings.php');
+include ('plugins/inventorysystem/api.php');
 
-add_menu_item("inventorysystem", $strings['menu']['pluginname']);
+$menu->addMenuItem("inventorysystem", $strings['menu']['pluginname']);
 
-add_submenu_item("inventorysystem", $strings['menu']['inventorylist'], "list");
+$menu->addSubmenuItem("inventorysystem", $strings['menu']['inventorylist'], "list");
 
 ?>

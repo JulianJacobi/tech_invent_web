@@ -14,7 +14,9 @@ $strings['login']['password']				= "Passwort:";
 $strings['login']['login']					= "Anmelden";
 $strings['login']['error']					= "Login fehlgeschlagen";
 $strings['login']['error_ban']				= "Du wurdest verbannt!";
-$strings['main']['backbutton']				= "Zurück";
 
+
+$strings['main']['backbutton']				= "Zurück";
+$strings['main']['logout']					= "Abmelden";
 
 ?>

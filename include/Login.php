@@ -1,21 +1,9 @@
 <?php
-/*
- * Authentication for TechInvent
- *
- * @author Malte Kießling
- * @version 2013-03-29
- */
- 
- //Einfügen der Datenbank-headers
-include("config/config_db.php");
 
-
-add_menu_item('main', 'Abmelden', "logout");
 
 //Ist die Session erstellt? Melden wir uns ab?
 
-
-if (!isset($_SESSION["login"]) || isset($_GET["plugin"]) && $_GET["plugin"] == "main" && isset($_GET["mode"]) && $_GET["mode"] == "logout") {
+if (!isset($_SESSION["login"]) || isset($_GET["plugin"]) && $_GET["plugin"] == "logout") {
 	$_SESSION["login"] = false;
 	$_SESSION["userid"] = 0;
 	$_SESSION["username"] = "";
@@ -54,10 +42,6 @@ else {
 	//und hab dann hier ne challange für den login!
 	$hashed_login_passwd = md5($raw_login_passwd);
 	
-	/* Das hier is nichtmehr nötig dank Jakobis Globalisierung...
-	*$login_connection = mysql_connect($config_db_server, $config_db_user, $config_db_password);
-	*mysql_select_db($config_db_database);
-	*/
 	$abfrage = "SELECT * FROM login WHERE username = '$escaped_login_user' LIMIT 1";
 	$ergebnis = mysql_query($abfrage); 
 	$row = mysql_fetch_object($ergebnis);
@@ -79,14 +63,14 @@ else {
 		generate_login(true);
 	}
 	
-	if (!has_permission("user_login")) {
+	if (!has_permission("login")) {
 	generate_login("true");
 }
 }
 //Das is die Funktion, die im falle das Irgentwas mit Login passiert aufgerufen wird.
 function generate_login($error)
 {
-include("templates/login_form.php");
+include("templates/forms/Login.php");
 exit;
 }
 
