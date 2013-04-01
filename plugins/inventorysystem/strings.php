@@ -2,7 +2,9 @@
 
 $strings['menu']['pluginname'] 									= "Inventar";
 $strings['menu']['inventorylist'] 								= "Inventarliste";
+$strings['menu']['inventorysystem_mainsettings']				= "Konfiguration";
 
+//InventoryList
 $strings['inventorysystem']['inventorylist']					= "Inventarliste";
 $strings['inventorysystem']['inventorylist_name']				= "Name";
 $strings['inventorysystem']['inventorylist_count']				= "Elemente";
@@ -23,5 +25,10 @@ $strings['inventorysystem']['inventorylist_edit_headline']		= "Inventar bearbeit
 $strings['inventorysystem']['inventorylist_edit_name']			= "Inventarname:";
 $strings['inventorysystem']['inventorylist_edit_description']	= "Beschreibung:";
 $strings['inventorysystem']['inventorylist_edit_save']			= "Speichern";
+
+//Settings
+$strings['inventorysystem']['settings_headline']				= "Konfiguration (inventorysystem)";
+$strings['inventorysystem']['settings_save']					= "Speichern";
+$strings['inventorysystem']['settings_length_description']		= "Anzahl der Worte in der Beschreibungsvorschau: ";
 
 ?>

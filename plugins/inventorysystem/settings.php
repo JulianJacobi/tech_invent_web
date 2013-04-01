@@ -1,5 +1,6 @@
 <?php
 global $inventorys;
+$configs = parse_ini_file("plugins/inventorysystem/config.ini");
 if(isset($_GET['mode']) && $_GET['part'] == "list"){
 	if (!isset($_POST['step'])) {
 		$inv = $inventorys;

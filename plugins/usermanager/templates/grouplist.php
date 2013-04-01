@@ -30,9 +30,9 @@ global $strings, $get_string;
 	while($row = mysql_fetch_object($abfrage_gruppen)) {
 		$description = "$row->description";
 		$desc_array = explode(" ", $description);
-		if (count($desc_array) >  20){
-			 $desc_array = array_slice($desc_array, 0, 20);
-			 $desc_array[20] = "...";
+		if (count($desc_array) >  $configs['config_grouplist_description_length']){
+			 $desc_array = array_slice($desc_array, 0, $configs['config_grouplist_description_length']);
+			 $desc_array[$configs['config_grouplist_description_length']] = "...";
 		}
 		$description = implode(" ", $desc_array);
 		?>
@@ -40,7 +40,7 @@ global $strings, $get_string;
 			<p><?php print("$row->id"); ?></p>
 		</td><td valign="top">
 			<p><?php print("$row->name"); ?></p>
-		</td><td>
+		</td><td title="<?php print("$row->description") ?>">
 			<p class="usermanager_grouplist_description"><?php print($description); ?></p>
 		</td><td valign="middle">
 			<form action="<?php print($get_string); ?>" method="post">

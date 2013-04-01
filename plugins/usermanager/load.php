@@ -11,4 +11,6 @@ if (has_permission("users_view_list"))
 	settings_add_item("usermanager", "Benutzerverwaltung", "settings_userlist");
 if (has_permission("groups_view_list"))
 	settings_add_item("usermanager", "Rechtegruppen", "settings_groups");
+
+settings_add_config_item("usermanager");
 ?>

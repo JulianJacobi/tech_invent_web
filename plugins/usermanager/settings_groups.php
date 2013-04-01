@@ -1,6 +1,9 @@
 <?php
 include("plugins/usermanager/strings.php");
 
+//config file einlesen
+$configs = parse_ini_file("plugins/usermanager/config.ini");
+
 if(!isset($_POST['step'])) {
 	include("plugins/usermanager/templates/grouplist.php");
 } elseif ($_POST['step'] == "edit_groups") {

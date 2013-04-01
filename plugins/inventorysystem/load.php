@@ -10,9 +10,13 @@ while ($row = mysql_fetch_object($res)) {
 
 $menu->addMenuItem("inventorysystem", $strings['menu']['pluginname']);
 
-$menu->addSubmenuItem("inventorysystem", $strings['menu']['inventorylist'], "list");
+foreach($inventorys AS $name => $name2) {
+	$menu->addSubmenuItem("inventorysystem", $name, ("list&inventory=".$name));
+}
 
 settings_add_plugin("inventorysystem", $strings['menu']['pluginname']);
+
+settings_add_config_item("inventorysystem");
 
 settings_add_item("inventorysystem", $strings['menu']['inventorylist'], "list");
 

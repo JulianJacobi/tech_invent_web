@@ -1,0 +1,15 @@
+div.settings_configuration {
+	width: 30em;
+}
+form.settings_configuration {
+	text-align: center;
+}
+form.settings_configuration p {
+	text-align: left;
+}
+form.settings_configuration input {
+	width: 20em;
+}
+form.settings_configuration input.system_button {
+	margin-top: 20px;
+}

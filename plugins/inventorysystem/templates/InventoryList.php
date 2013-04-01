@@ -28,12 +28,19 @@
 			} else {
 				$class = " inventorysystem_inventorylist_entry_hl2";
 			}
+			$description = "$inventory->description";
+			$desc_array = explode(" ", $description);
+			if (count($desc_array) >  $configs['settings_length_description']){
+				$desc_array = array_slice($desc_array, 0, $configs['settings_length_description']);
+				$desc_array[$configs['settings_length_description']] = "...";
+			}
+			$description = implode(" ", $desc_array);
 			print('<tr class="inventorysystem_inventorylist_entry'.$class.'"><td class="inventorysystem_inventorylist_entry_name">');
 			print("$inventory->name");
 			print('</td><td class="inventorysystem_inventorylist_entry_count">');
 			print($inventory->item_count());
-			print('</td><td class="inventorysystem_inventorylist_entry_description">');
-			print("$inventory->description");
+			print('</td><td class="inventorysystem_inventorylist_entry_description" title="'."$inventory->description".'">');
+			print($description);
 			print('</td><td>');
 			?>
 			<form action="<?php print($get_string); ?>" method="post">
