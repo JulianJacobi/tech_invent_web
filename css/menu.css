@@ -46,10 +46,11 @@ div#second_menu {
 	height: 1.5em;
 	width: 100%;
 	box-shadow: 0px 0px 3px black;
+	overflow-y: scroll;
 }
 
 div.second_menu_item{
-	padding: 2px 20px 0px 20px;
+	padding: 2px 20px 3px 20px;
 	float: left;
 }
 
