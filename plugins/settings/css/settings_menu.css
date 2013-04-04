@@ -20,3 +20,6 @@ div.settings_menu_item a{
 div.settings_menu_item a:hover {
 	color: black;
 }
+div.settings_menu_item_active a {
+	color: black;
+}

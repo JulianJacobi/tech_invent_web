@@ -6,8 +6,15 @@
 		$mode = $_GET['mode'];
 		$submenu = $settings_menu[$mode];
 		foreach ($submenu AS $plugin => $plugin_menu) {
+			if (isset($_GET['part']) && $_GET['part'] == $plugin_menu){
+				$menuactive = "settings_menu_item_active";
+			} else {
+				$menuactive = " ";
+			}
 			?>
-		    <div class='settings_menu_item'><a href='<?php print($get_string . "part=" . $plugin_menu); ?>'><?php print($plugin); ?></a></div>
+		    <div class='settings_menu_item <?php print($menuactive) ?>'>
+		    	<a href='<?php print($get_string . "part=" . $plugin_menu); ?>'><?php print($plugin); ?></a>
+		    </div>
 		    <?php
 		}
 	}

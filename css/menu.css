@@ -32,6 +32,9 @@ div.menu_item a{
 div.menu_item a:hover{
 	color: white;
 }
+div.menu_item_active a{
+	color: white;
+}
 
 div#username{
 	display: block;
@@ -60,5 +63,8 @@ div.second_menu_item a{
 }
 
 div.second_menu_item a:hover{
+	color: black;
+}
+div.second_menu_item_active a {
 	color: black;
 }
